@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style_signin.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	{% if error %}
+	<div id="error">
+		{{ error }}
+	</div>
+	{% endif %}
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form method="POST">
+					{% csrf_token %}
+					<label for="chk" aria-hidden="true" id="log">Login</label>
+					<input type="text" name="username" id="username" placeholder="Username">
+					<input type="password" name="password" id="password" placeholder="Password">
+					<button type="submit" name="log_in_on">Login</button>
+				</form>
+				    <label id="or">OR</label>
+				    <button onclick="start()" id="UoM">Log in through UoM</button>
+			</div>
+
+			<div class="login">
+				<form method="POST">
+					{% csrf_token %}
+					<label for="chk" aria-hidden="true" id="sign">Sign up</label>
+					<input type="text" name="username" placeholder="User name" id="username">
+					<input type="email" name="email" placeholder="Email">
+					<input type="password" name="password1" id="password1" placeholder="Password">
+					<input type="password" name="password2" id="password2" placeholder="Repeat Password">
+					<button type="submit" name="sign_up_on">Sign up</button>
+				</form>
+			</div>
+	</div>
+
+<script src="{% static 'js/java.js' %}">
+</script>
+</body>
+</html>

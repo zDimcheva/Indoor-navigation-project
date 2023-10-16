@@ -1,0 +1,1785 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        circle{
+          visibility: hidden;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>  
+    
+<body>
+
+<div id="div1"> 
+
+	<svg width="200" height="200">
+		<image href="{% static 'images/mira logo.png' %}" height="200" width="200"/>
+	</svg>
+
+  <form onsubmit="return change_floor(this)">
+    <label for="i1">Choose your start point from the list:</label>
+    <input list="browsers" name="i1" id="i1" value="" oninput="input_values()">
+    <datalist id="browsers">
+      <option value="Loading Bay Entrance">
+        <option value="Lift GF">
+        <option value="Disabled Lift GF">
+        <option value="ITS Office 1">
+        <option value="ITS Office 2">
+        <option value="ITS Help Desk">
+        <option value="Main Entrance">
+        <option value="G41">
+        <option value="G36">
+        <option value="G37">
+        <option value="G35">
+        <option value="G33">
+        <option value="G33a">
+        <option value="G23">
+        <option value="G20">
+        <option value="G18">
+        <option value="G17">
+        <option value="G16">
+        <option value="G14">
+        <option value="G13">
+        <option value="G12">
+        <option value="G11">
+        <option value="G10">
+        <option value="G7">
+        <option value="G6">
+        <option value="Lift L1">
+        <option value="Disabled Lift L1">
+        <option value="LF1">
+        <option value="LF7">
+        <option value="LF8">
+        <option value="1.1">
+        <option value="LF11">
+        <option value="LF12">
+        <option value="LF9">
+        <option value="LF16">
+        <option value="LF39">
+        <option value="LF17">
+        <option value="LF15">
+        <option value="LF34">
+        <option value="LF21">
+        <option value="LF22">
+        <option value="LF31">
+        <option value="LF23">
+        <option value="LF24">
+        <option value="LF25">
+        <option value="LF26">
+        <option value="LF27">
+        <option value="LF28">
+        <option value="LF29">
+        <option value="Lift 1">
+        <option value="Disabled Lift 1">
+        <option value="1.19">
+        <option value="1.18A">
+        <option value="1.18B">
+        <option value="1.20">
+        <option value="1.25">
+        <option value="1.24">
+        <option value="1.24A">
+        <option value="1.23">
+        <option value="1.10">
+        <option value="1.15">
+        <option value="1.8">
+        <option value="1.5">
+        <option value="1.4">
+        <option value="1.3">
+        <option value="Courtyard">
+        <option value="IT Building Bridge">
+        <option value="Elevated Walkway">
+        <option value="Lift 2">
+        <option value="Disabled Lift 2">
+        <option value="2.1">
+        <option value="2.3">
+        <option value="2.4">
+        <option value="2.6">
+        <option value="2.8">
+        <option value="2.10">
+        <option value="2.12">
+        <option value="2.14">
+        <option value="2.16">
+        <option value="2.13">
+        <option value="2.15">
+        <option value="2.9">
+        <option value="2.19">
+        <option value="2.20">
+        <option value="2.22">
+        <option value="2.24">
+        <option value="2.26">
+        <option value="2.28">
+        <option value="2.30">
+        <option value="2.32">
+        <option value="2.34">
+        <option value="2.36">
+        <option value="2.38">
+        <option value="2.40">
+        <option value="2.42">
+        <option value="2.44">
+        <option value="2.46">
+        <option value="2.48">
+        <option value="2.50">
+        <option value="2.52">
+        <option value="2.54">
+        <option value="2.58">
+        <option value="2.60">
+        <option value="2.62">
+        <option value="2.64">
+        <option value="2.66">
+        <option value="2.68">
+        <option value="2.69">
+        <option value="2.70">
+        <option value="2.71">
+        <option value="2.65">
+        <option value="2.63">
+        <option value="2.61">
+        <option value="2.55">
+        <option value="2.53">
+        <option value="2.51">
+        <option value="2.49">
+        <option value="2.43">
+        <option value="2.41">
+        <option value="2.39">
+        <option value="2.37">
+        <option value="2.33">
+        <option value="2.29/2.31">
+        <option value="2.25B">
+        <option value="2.25A">
+        <option value="2.83">
+        <option value="2.82">
+        <option value="2.81">
+        <option value="2.80">
+        <option value="2.76">
+        <option value="2.75">
+        <option value="2.74">
+        <option value="2.72">
+        <option value="2.67">
+        <option value="2.67A">
+        <option value="Plant Room">
+        <option value="2.71A">
+        <option value="2.86">
+        <option value="2.88">
+        <option value="2.89">
+        <option value="2.90">
+        <option value="2.92">
+        <option value="2.94">
+        <option value="2.96">
+        <option value="2.87">
+        <option value="2.91">
+        <option value="2.93">
+        <option value="2.95">
+        <option value="2.99">
+        <option value="2.100">
+        <option value="2.101">
+        <option value="2.102">
+        <option value="2.104">
+        <option value="2.106">
+        <option value="2.108">
+        <option value="2.110">
+        <option value="2.112">
+        <option value="2.114">
+        <option value="2.116">
+        <option value="2.103">
+        <option value="2.105">
+        <option value="2.107">
+        <option value="2.109">
+        <option value="2.111">
+        <option value="2.113">
+        <option value="2.115">
+        <option value="2.119">
+        <option value="2.121">
+        <option value="2.123">
+        <option value="2.125">
+        <option value="2.120A">
+        <option value="2.120">
+        <option value="2.122">
+        <option value="2.124">
+        <option value="2.126">
+        <option value="2.127">
+        <option value="2.27/2.77">
+        <option value="2.45/2.47">
+    </datalist>
+    <label for="i2">Choose your end point from the list:</label>
+    <input list="browsers" name="i2" id="i2" value="" oninput="input_values()">
+    <datalist id="browsers">
+      <option value="G105">
+        <option value="Loading Bay Entrance">
+        <option value="Lift GF">
+        <option value="Disabled Lift GF">
+        <option value="ITS Office 1">
+        <option value="ITS Office 2">
+        <option value="ITS Help Desk">
+        <option value="Main Entrance">
+        <option value="G41">
+        <option value="G36">
+        <option value="G37">
+        <option value="G35">
+        <option value="G33">
+        <option value="G33a">
+        <option value="G23">
+        <option value="G20">
+        <option value="G18">
+        <option value="G17">
+        <option value="G16">
+        <option value="G14">
+        <option value="G13">
+        <option value="G12">
+        <option value="G11">
+        <option value="G10">
+        <option value="G7">
+        <option value="G6">
+        <option value="Lift L1">
+        <option value="Disabled Lift L1">
+        <option value="LF1">
+        <option value="LF7">
+        <option value="LF8">
+        <option value="1.1">
+        <option value="LF11">
+        <option value="LF12">
+        <option value="LF9">
+        <option value="LF16">
+        <option value="LF39">
+        <option value="LF17">
+        <option value="LF15">
+        <option value="LF34">
+        <option value="LF21">
+        <option value="LF22">
+        <option value="LF31">
+        <option value="LF23">
+        <option value="LF24">
+        <option value="LF25">
+        <option value="LF26">
+        <option value="LF27">
+        <option value="LF28">
+        <option value="LF29">
+        <option value="Lift 1">
+        <option value="Disabled Lift 1">
+        <option value="1.19">
+        <option value="1.18A">
+        <option value="1.18B">
+        <option value="1.20">
+        <option value="1.25">
+        <option value="1.24">
+        <option value="1.24A">
+        <option value="1.23">
+        <option value="1.10">
+        <option value="1.15">
+        <option value="1.8">
+        <option value="1.5">
+        <option value="1.4">
+        <option value="1.3">
+        <option value="Courtyard">
+        <option value="IT Building Bridge">
+        <option value="Elevated Walkway">
+        <option value="Lift 2">
+        <option value="Disabled Lift 2">
+        <option value="2.1">
+        <option value="2.3">
+        <option value="2.4">
+        <option value="2.6">
+        <option value="2.8">
+        <option value="2.10">
+        <option value="2.12">
+        <option value="2.14">
+        <option value="2.16">
+        <option value="2.13">
+        <option value="2.15">
+        <option value="2.9">
+        <option value="2.19">
+        <option value="2.20">
+        <option value="2.22">
+        <option value="2.24">
+        <option value="2.26">
+        <option value="2.28">
+        <option value="2.30">
+        <option value="2.32">
+        <option value="2.34">
+        <option value="2.36">
+        <option value="2.38">
+        <option value="2.40">
+        <option value="2.42">
+        <option value="2.44">
+        <option value="2.46">
+        <option value="2.48">
+        <option value="2.50">
+        <option value="2.52">
+        <option value="2.54">
+        <option value="2.58">
+        <option value="2.60">
+        <option value="2.62">
+        <option value="2.64">
+        <option value="2.66">
+        <option value="2.68">
+        <option value="2.69">
+        <option value="2.70">
+        <option value="2.71">
+        <option value="2.65">
+        <option value="2.63">
+        <option value="2.61">
+        <option value="2.55">
+        <option value="2.53">
+        <option value="2.51">
+        <option value="2.49">
+        <option value="2.43">
+        <option value="2.41">
+        <option value="2.39">
+        <option value="2.37">
+        <option value="2.33">
+        <option value="2.29/2.31">
+        <option value="2.25B">
+        <option value="2.25A">
+        <option value="2.83">
+        <option value="2.82">
+        <option value="2.81">
+        <option value="2.80">
+        <option value="2.76">
+        <option value="2.75">
+        <option value="2.74">
+        <option value="2.72">
+        <option value="2.67">
+        <option value="2.67A">
+        <option value="Plant Room">
+        <option value="2.71A">
+        <option value="2.86">
+        <option value="2.88">
+        <option value="2.89">
+        <option value="2.90">
+        <option value="2.92">
+        <option value="2.94">
+        <option value="2.96">
+        <option value="2.87">
+        <option value="2.91">
+        <option value="2.93">
+        <option value="2.95">
+        <option value="2.99">
+        <option value="2.100">
+        <option value="2.101">
+        <option value="2.102">
+        <option value="2.104">
+        <option value="2.106">
+        <option value="2.108">
+        <option value="2.110">
+        <option value="2.112">
+        <option value="2.114">
+        <option value="2.116">
+        <option value="2.103">
+        <option value="2.105">
+        <option value="2.107">
+        <option value="2.109">
+        <option value="2.111">
+        <option value="2.113">
+        <option value="2.115">
+        <option value="2.119">
+        <option value="2.121">
+        <option value="2.123">
+        <option value="2.125">
+        <option value="2.120A">
+        <option value="2.120">
+        <option value="2.122">
+        <option value="2.124">
+        <option value="2.126">
+        <option value="2.127">
+        <option value="2.27/2.77">
+        <option value="2.45/2.47">
+    </datalist>
+    <input type="submit" onclick="optimal_path()" value="Search">
+  </form>
+
+  <form class="toilet_buttons">
+    <label> Find closest toilet:</label>
+    <button class="toilet_m" onclick="find_toilet_men()"></button>
+    <button class="toilet_w" onclick="find_toilet_women()"></button>
+    <button class="toilet_d" onclick="find_toilet_disabled()"></button>
+  </form>
+  
+</div>
+   
+<div id="div2">    
+
+  {% for room in all_rooms %}
+  <div class="modal" id= "{{room.title}}" >
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Room: {{ room.title }}</h1>
+      {% if room.description %}<p style="overflow: hidden;max-width:800px;">Description: {{ room.description }}</p>{% endif %}
+      {% if room.capacity %}<p>Capacity: {{ room.capacity }}</p>{% endif %}
+      <button class="navigation_button" id="{{room.title}}">Directions</button>
+      <p class="table_header">Timetable: </p>
+      <table id="timetable-{{room.title}}" class="timetable">
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        {% for row in table %}
+        <tr>
+          <th>{{ row.5.0|time:"H:i" }}</th>
+          {% for value in row|slice:":5" %}
+                  <th></th>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="modal-content2" id="{{room.title}}">  
+      <span class="close2">&times;</span>
+        <form onsubmit="return change_floor(this)">
+        <h2> Directions to {{room.title}}: </h2>
+        <label class="nav" for="i1">From room:</label>
+        <input list="browsers" name="i1" id="{{room.title}}" class="nav_start" value="">
+        <datalist id="browsers">
+          <option value="Loading Bay Entrance">
+            <option value="Lift GF">
+            <option value="Disabled Lift GF">
+            <option value="ITS Office 1">
+            <option value="ITS Office 2">
+            <option value="ITS Help Desk">
+            <option value="Main Entrance">
+            <option value="G41">
+            <option value="G36">
+            <option value="G37">
+            <option value="G35">
+            <option value="G33">
+            <option value="G33a">
+            <option value="G23">
+            <option value="G20">
+            <option value="G18">
+            <option value="G17">
+            <option value="G16">
+            <option value="G14">
+            <option value="G13">
+            <option value="G12">
+            <option value="G11">
+            <option value="G10">
+            <option value="G7">
+            <option value="G6">
+            <option value="Lift L1">
+            <option value="Disabled Lift L1">
+            <option value="LF1">
+            <option value="LF7">
+            <option value="LF8">
+            <option value="1.1">
+            <option value="LF11">
+            <option value="LF12">
+            <option value="LF9">
+            <option value="LF16">
+            <option value="LF39">
+            <option value="LF17">
+            <option value="LF15">
+            <option value="LF34">
+            <option value="LF21">
+            <option value="LF22">
+            <option value="LF31">
+            <option value="LF23">
+            <option value="LF24">
+            <option value="LF25">
+            <option value="LF26">
+            <option value="LF27">
+            <option value="LF28">
+            <option value="LF29">
+            <option value="Lift 1">
+            <option value="Disabled Lift 1">
+            <option value="1.19">
+            <option value="1.18A">
+            <option value="1.18B">
+            <option value="1.20">
+            <option value="1.25">
+            <option value="1.24">
+            <option value="1.24A">
+            <option value="1.23">
+            <option value="1.10">
+            <option value="1.15">
+            <option value="1.8">
+            <option value="1.5">
+            <option value="1.4">
+            <option value="1.3">
+            <option value="Courtyard">
+            <option value="IT Building Bridge">
+            <option value="Elevated Walkway">
+            <option value="Lift 2">
+            <option value="Disabled Lift 2">
+            <option value="2.1">
+            <option value="2.3">
+            <option value="2.4">
+            <option value="2.6">
+            <option value="2.8">
+            <option value="2.10">
+            <option value="2.12">
+            <option value="2.14">
+            <option value="2.16">
+            <option value="2.13">
+            <option value="2.15">
+            <option value="2.9">
+            <option value="2.19">
+            <option value="2.20">
+            <option value="2.22">
+            <option value="2.24">
+            <option value="2.26">
+            <option value="2.28">
+            <option value="2.30">
+            <option value="2.32">
+            <option value="2.34">
+            <option value="2.36">
+            <option value="2.38">
+            <option value="2.40">
+            <option value="2.42">
+            <option value="2.44">
+            <option value="2.46">
+            <option value="2.48">
+            <option value="2.50">
+            <option value="2.52">
+            <option value="2.54">
+            <option value="2.58">
+            <option value="2.60">
+            <option value="2.62">
+            <option value="2.64">
+            <option value="2.66">
+            <option value="2.68">
+            <option value="2.69">
+            <option value="2.70">
+            <option value="2.71">
+            <option value="2.65">
+            <option value="2.63">
+            <option value="2.61">
+            <option value="2.55">
+            <option value="2.53">
+            <option value="2.51">
+            <option value="2.49">
+            <option value="2.43">
+            <option value="2.41">
+            <option value="2.39">
+            <option value="2.37">
+            <option value="2.33">
+            <option value="2.29/2.31">
+            <option value="2.25B">
+            <option value="2.25A">
+            <option value="2.83">
+            <option value="2.82">
+            <option value="2.81">
+            <option value="2.80">
+            <option value="2.76">
+            <option value="2.75">
+            <option value="2.74">
+            <option value="2.72">
+            <option value="2.67">
+            <option value="2.67A">
+            <option value="Plant Room">
+            <option value="2.71A">
+            <option value="2.86">
+            <option value="2.88">
+            <option value="2.89">
+            <option value="2.90">
+            <option value="2.92">
+            <option value="2.94">
+            <option value="2.96">
+            <option value="2.87">
+            <option value="2.91">
+            <option value="2.93">
+            <option value="2.95">
+            <option value="2.99">
+            <option value="2.100">
+            <option value="2.101">
+            <option value="2.102">
+            <option value="2.104">
+            <option value="2.106">
+            <option value="2.108">
+            <option value="2.110">
+            <option value="2.112">
+            <option value="2.114">
+            <option value="2.116">
+            <option value="2.103">
+            <option value="2.105">
+            <option value="2.107">
+            <option value="2.109">
+            <option value="2.111">
+            <option value="2.113">
+            <option value="2.115">
+            <option value="2.119">
+            <option value="2.121">
+            <option value="2.123">
+            <option value="2.125">
+            <option value="2.120A">
+            <option value="2.120">
+            <option value="2.122">
+            <option value="2.124">
+            <option value="2.126">
+            <option value="2.127">
+            <option value="2.27/2.77">
+            <option value="2.45/2.47">
+        </datalist>
+        <label class="nav" for="i2">To:</label>
+        <input class="nav_start" value="{{room.title}}" readonly>
+        <button class="nav_find" type="submit" id="{{room.title}}">Find</button>
+        </form>
+    </div>
+
+  </div>
+  {% endfor %}
+
+
+  <div id="div_menu">
+    <form method="POST">
+    <ul>
+      <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+      {% if is_logged_uom %} <li><a href="{% url 'search' %}">Search</a></li> {% endif %}
+      <li><a href="{% url 'information' %}">Information</a></li>
+    </ul>
+    </form>
+  </div>
+
+  <svg width="1000" height="570" xmlns="http://www.w3.org/2000/svg">
+    
+  <image id="img" href="{% static 'images/Kilburn Building Second Floor.jpg' %}" height="600" width="1000"/>
+
+  <circle cx="285" cy="470" r="4" style="fill:blue"/>
+  <circle cx="275" cy="470" r="4" style="fill:blue"/>
+
+  <circle cx="285" cy="425" r="4" style="fill:blue"/>
+  <circle cx="275" cy="425" r="4" style="fill:blue"/>
+
+  <circle cx="265" cy="445" r="4" style="fill:blue"/>
+  <circle cx="275" cy="445" r="4" style="fill:blue"/>
+
+  <circle cx="285" cy="395" r="4" style="fill:blue"/>
+  <circle cx="275" cy="395" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="405" r="4" style="fill:blue"/>
+  <circle cx="265" cy="405" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="365" r="4" style="fill:blue"/>
+  <circle cx="265" cy="365" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="350" r="4" style="fill:blue"/>
+  <circle cx="285" cy="350" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="320" r="4" style="fill:blue"/>
+  <circle cx="265" cy="320" r="4" style="fill:blue"/>
+  <circle cx="285" cy="320" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="290" r="4" style="fill:blue"/>
+  <circle cx="265" cy="290" r="4" style="fill:blue"/>
+  <circle cx="285" cy="290" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="255" r="4" style="fill:blue"/>
+  <circle cx="265" cy="255" r="4" style="fill:blue"/>
+  <circle cx="285" cy="255" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="230" r="4" style="fill:blue"/>
+  <circle cx="285" cy="230" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="210" r="4" style="fill:blue"/>
+  <circle cx="265" cy="210" r="4" style="fill:red"/>
+
+  <circle cx="275" cy="195" r="4" style="fill:blue"/>
+  <circle cx="285" cy="195" r="4" style="fill:red"/>
+
+  <circle cx="275" cy="165" r="4" style="fill:blue"/>
+  <circle cx="265" cy="165" r="4" style="fill:blue"/>
+  <circle cx="285" cy="165" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="135" r="4" style="fill:blue"/>
+  <circle cx="285" cy="135" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="120" r="4" style="fill:blue"/>
+  <circle cx="265" cy="120" r="4" style="fill:blue"/>
+  <circle cx="285" cy="120" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="90" r="4" style="fill:blue"/>
+
+  <circle cx="285" cy="90" r="4" style="fill:red"/>
+  <circle cx="285" cy="75" r="4" style="fill:red"/>
+
+  <circle cx="255" cy="90" r="4" style="fill:blue"/>
+  <circle cx="255" cy="75" r="4" style="fill:blue"/>
+  <circle cx="245" cy="90" r="4" style="fill:blue"/>
+
+  <circle cx="275" cy="485" r="4" style="fill:violet"/>
+
+  <circle cx="285" cy="485" r="4" style="fill:blue"/>
+  <circle cx="285" cy="495" r="4" style="fill:blue"/>
+
+  <circle cx="255" cy="485" r="4" style="fill:blue"/>
+  <circle cx="255" cy="495" r="4" style="fill:yellow"/>
+  <circle cx="240" cy="485" r="4" style="fill:blue"/>
+
+  <circle cx="315" cy="485" r="4" style="fill:red"/>
+  <circle cx="315" cy="475" r="4" style="fill:red"/>
+  <circle cx="315" cy="495" r="4" style="fill:red"/>
+
+  <circle cx="355" cy="485" r="4" style="fill:red"/>
+  <circle cx="355" cy="475" r="4" style="fill:red"/>
+  <circle cx="355" cy="495" r="4" style="fill:red"/>
+
+  <circle cx="370" cy="475" r="4" style="fill:red"/>
+  <circle cx="370" cy="485" r="4" style="fill:red"/>
+
+  <circle cx="405" cy="475" r="4" style="fill:red"/>
+  <circle cx="405" cy="485" r="4" style="fill:red"/>
+  <circle cx="405" cy="495" r="4" style="fill:red"/>
+
+  <circle cx="430" cy="485" r="4" style="fill:blue"/>
+  <circle cx="430" cy="515" r="4" style="fill:red"/>
+  <circle cx="430" cy="505" r="4" style="fill:red"/>
+
+  <circle cx="450" cy="485" r="4" style="fill:green"/>
+  <circle cx="450" cy="515" r="4" style="fill:red"/>
+  <circle cx="450" cy="505" r="4" style="fill:red"/>
+
+  <circle cx="470" cy="485" r="4" style="fill:red"/>
+  <circle cx="470" cy="505" r="4" style="fill:blue"/>
+  <circle cx="470" cy="465" r="4" style="fill:green"/>
+  <circle cx="440" cy="465" r="4" style="fill:red"/>
+  <circle cx="470" cy="445" r="4" style="fill:red"/>
+
+  <circle cx="490" cy="505" r="4" style="fill:red"/>
+  <circle cx="490" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="505" cy="505" r="4" style="fill:red"/>
+
+  <circle cx="490" cy="505" r="4" style="fill:red"/>
+  <circle cx="490" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="520" cy="505" r="4" style="fill:red"/>
+  <circle cx="520" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="540" cy="505" r="4" style="fill:red"/>
+  <circle cx="540" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="585" cy="435" r="4" style="fill:red"/>
+  <circle cx="585" cy="495" r="4" style="fill:red"/>
+  <circle cx="585" cy="505" r="4" style="fill:red"/>
+
+  <circle cx="610" cy="505" r="4" style="fill:red"/>
+  <circle cx="610" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="640" cy="505" r="4" style="fill:red"/>
+  <circle cx="640" cy="495" r="4" style="fill:red"/>
+
+  <circle cx="665" cy="505" r="4" style="fill:red"/>
+  <circle cx="665" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="680" cy="505" r="4" style="fill:red"/>
+  <circle cx="680" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="740" cy="505" r="4" style="fill:red"/>
+  <circle cx="750" cy="505" r="4" style="fill:red"/>
+  <circle cx="750" cy="515" r="4" style="fill:red"/>
+  <circle cx="740" cy="515" r="4" style="fill:red"/>
+  <circle cx="720" cy="515" r="4" style="fill:red"/>
+
+  <circle cx="740" cy="485" r="4" style="fill:purple"/>
+  <circle cx="750" cy="485" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="470" r="4" style="fill:purple"/>
+  <circle cx="720" cy="470" r="4" style="fill:blue"/>
+
+  <circle cx="740" cy="455" r="4" style="fill:purple"/>
+  <circle cx="750" cy="455" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="425" r="4" style="fill:purple"/>
+  <circle cx="750" cy="425" r="4" style="fill:purple"/>
+  <circle cx="730" cy="425" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="400" r="4" style="fill:purple"/>
+  <circle cx="750" cy="400" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="380" r="4" style="fill:purple"/>
+  <circle cx="750" cy="380" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="360" r="4" style="fill:purple"/>
+  <circle cx="750" cy="360" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="370" r="4" style="fill:blue"/>
+
+  <circle cx="690" cy="370" r="4" style="fill:blue"/>
+  <circle cx="655" cy="370" r="4" style="fill:purple"/>
+  <circle cx="690" cy="355" r="4" style="fill:purple"/>
+  <circle cx="655" cy="355" r="4" style="fill:purple"/>
+  <circle cx="625" cy="370" r="4" style="fill:purple"/>
+  <circle cx="625" cy="380" r="4" style="fill:purple"/>
+
+  <circle cx="605" cy="370" r="4" style="fill:purple"/>
+  <circle cx="605" cy="380" r="4" style="fill:purple"/>
+  <circle cx="565" cy="370" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="335" r="4" style="fill:blue"/>
+  <circle cx="750" cy="335" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="315" r="4" style="fill:purple"/>
+  <circle cx="750" cy="315" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="290" r="4" style="fill:purple"/>
+  <circle cx="750" cy="290" r="4" style="fill:purple"/>
+  <circle cx="730" cy="290" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="265" r="4" style="fill:purple"/>
+  <circle cx="750" cy="265" r="4" style="fill:purple"/>
+  <circle cx="730" cy="265" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="245" r="4" style="fill:purple"/>
+  <circle cx="750" cy="245" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="220" r="4" style="fill:purple"/>
+  <circle cx="750" cy="220" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="195" r="4" style="fill:purple"/>
+  <circle cx="750" cy="195" r="4" style="fill:purple"/>
+  <circle cx="750" cy="195" r="4" style="fill:purple"/>
+
+  <circle cx="715" cy="185" r="4" style="fill:purple"/>
+  <circle cx="715" cy="205" r="4" style="fill:purple"/>
+  <circle cx="715" cy="195" r="4" style="fill:purple"/>
+  <circle cx="690" cy="195" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="170" r="4" style="fill:purple"/>
+  <circle cx="750" cy="170" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="160" r="4" style="fill:purple"/>
+  <circle cx="730" cy="160" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="140" r="4" style="fill:purple"/>
+  <circle cx="750" cy="140" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="105" r="4" style="fill:purple"/>
+  <circle cx="750" cy="105" r="4" style="fill:purple"/>
+  <circle cx="730" cy="105" r="4" style="fill:purple"/>
+
+  <circle cx="740" cy="70" r="4" style="fill:purple"/>
+  <circle cx="740" cy="55" r="4" style="fill:purple"/>
+  <circle cx="750" cy="70" r="4" style="fill:purple"/>
+  <circle cx="750" cy="55" r="4" style="fill:purple"/>
+
+  <circle cx="707" cy="70" r="4" style="fill:orange"/>
+  <circle cx="707" cy="60" r="4" style="fill:orange"/>
+  <circle cx="707" cy="85" r="4" style="fill:orange"/>
+
+  <circle cx="680" cy="60" r="4" style="fill:orange"/>
+  <circle cx="680" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="660" cy="60" r="4" style="fill:orange"/>
+  <circle cx="660" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="640" cy="60" r="4" style="fill:orange"/>
+  <circle cx="640" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="615" cy="60" r="4" style="fill:orange"/>
+  <circle cx="615" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="577" cy="60" r="4" style="fill:orange"/>
+  <circle cx="577" cy="70" r="4" style="fill:orange"/>
+  <circle cx="577" cy="85" r="4" style="fill:orange"/>
+
+  <circle cx="567" cy="60" r="4" style="fill:orange"/>
+  <circle cx="567" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="547" cy="60" r="4" style="fill:orange"/>
+  <circle cx="547" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="505" cy="60" r="4" style="fill:orange"/>
+  <circle cx="505" cy="70" r="4" style="fill:orange"/>
+
+  <circle cx="505" cy="115" r="4" style="fill:green"/>
+  <circle cx="505" cy="160" r="4" style="fill:green"/>
+  <circle cx="495" cy="160" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="160" r="4" style="fill:green"/>
+  <circle cx="495" cy="160" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="170" r="4" style="fill:green"/>
+  <circle cx="520" cy="170" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="200" r="4" style="fill:green"/>
+  <circle cx="495" cy="200" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="240" r="4" style="fill:green"/>
+  <circle cx="495" cy="240" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="250" r="4" style="fill:green"/>
+  <circle cx="495" cy="250" r="4" style="fill:blue"/>
+
+  <circle cx="505" cy="290" r="4" style="fill:green"/>
+  <circle cx="495" cy="290" r="4" style="fill:red"/>
+
+  <circle cx="505" cy="275" r="4" style="fill:green"/>
+  <circle cx="565" cy="275" r="4" style="fill:green"/>
+  <circle cx="585" cy="275" r="4" style="fill:green"/>
+  <circle cx="565" cy="290" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="330" r="4" style="fill:green"/>
+  <circle cx="495" cy="330" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="370" r="4" style="fill:green"/>
+  <circle cx="495" cy="370" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="435" r="4" style="fill:green"/>
+  <circle cx="495" cy="435" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="460" r="4" style="fill:green"/>
+  <circle cx="495" cy="460" r="4" style="fill:green"/>
+
+  <circle cx="505" cy="480" r="4" style="fill:green"/>
+  <circle cx="495" cy="480" r="4" style="fill:green"/>
+
+  <circle cx="555" cy="115" r="4" style="fill:brown"/>
+  <circle cx="555" cy="105" r="4" style="fill:brown"/>
+
+  <circle cx="555" cy="130" r="4" style="fill:brown"/>
+  <circle cx="535" cy="130" r="4" style="fill:brown"/>
+  <circle cx="565" cy="130" r="4" style="fill:brown"/>
+
+  <circle cx="595" cy="115" r="4" style="fill:brown"/>
+  <circle cx="595" cy="105" r="4" style="fill:brown"/>
+
+  <circle cx="660" cy="115" r="4" style="fill:brown"/>
+  <circle cx="660" cy="105" r="4" style="fill:brown"/>
+  <circle cx="660" cy="130" r="4" style="fill:brown"/>
+  <circle cx="675" cy="130" r="4" style="fill:brown"/>
+
+  <circle cx="660" cy="145" r="4" style="fill:brown"/>
+  <circle cx="675" cy="145" r="4" style="fill:brown"/>
+
+  <circle cx="660" cy="165" r="4" style="fill:brown"/>
+
+  <circle cx="450" cy="115" r="4" style="fill:blue"/>
+  <circle cx="450" cy="100" r="4" style="fill:pink"/>
+  <circle cx="470" cy="100" r="4" style="fill:pink"/>
+  <circle cx="450" cy="90" r="4" style="fill:pink"/>
+
+  <circle cx="430" cy="75" r="4" style="fill:pink"/>
+  <circle cx="430" cy="100" r="4" style="fill:pink"/>
+  <circle cx="430" cy="90" r="4" style="fill:pink"/>
+
+  <circle cx="400" cy="90" r="4" style="fill:pink"/>
+  <circle cx="400" cy="60" r="4" style="fill:pink"/>
+  <circle cx="400" cy="100" r="4" style="fill:pink"/>
+  <circle cx="400" cy="75" r="4" style="fill:red"/>
+
+  <circle cx="385" cy="75" r="4" style="fill:red"/>
+
+  <circle cx="375" cy="90" r="4" style="fill:pink"/>
+  <circle cx="375" cy="100" r="4" style="fill:pink"/>
+
+  <circle cx="355" cy="90" r="4" style="fill:pink"/>
+  <circle cx="355" cy="100" r="4" style="fill:pink"/>
+
+  <circle cx="340" cy="90" r="4" style="fill:pink"/>
+  <circle cx="340" cy="110" r="4" style="fill:pink"/>
+
+  <circle cx="325" cy="90" r="4" style="fill:pink"/>
+  <circle cx="325" cy="75" r="4" style="fill:pink"/>
+
+  <circle cx="310" cy="90" r="4" style="fill:pink"/>
+  <circle cx="310" cy="100" r="4" style="fill:pink"/>
+
+  <a class="timetableBtn" id="2.100" onClick="show_info('2.100')">
+      <path d="M 221 106
+          L 221 145
+          L 266 145
+          L 266 106
+          Z"/></a> <!-- 2.100 -->
+
+  <a class="timetableBtn" id="2.102" onClick="show_info('2.102')">
+      <path d="M 221 145
+            L 221 186
+            L 266 186
+            L 266 145
+            Z"/></a> <!-- 2.102 -->
+
+  <a class="timetableBtn" id="2.104" onClick="show_info('2.104')">
+      <path d="M 221 186
+            L 221 225
+            L 266 225
+            L 266 186
+            Z"/></a> <!-- 2.104 -->
+
+  <a class="timetableBtn" id="2.106" onClick="show_info('2.106')">
+      <path d="M 221 225
+            L 221 267
+            L 266 267
+            L 266 225
+            Z"/></a> <!-- 2.106 -->
+
+  <a class="timetableBtn" id="2.108" onClick="show_info('2.108')">
+      <path d="M 221 267
+            L 221 306
+            L 266 306
+            L 266 267
+            Z"/></a> <!-- 2.108 -->
+
+  <a class="timetableBtn" id="2.110" onClick="show_info('2.110')">
+      <path d="M 221 306
+            L 221 346
+            L 266 346
+            L 266 306
+            Z"/></a> <!-- 2.110 -->
+
+  <a class="timetableBtn" id="2.112" onClick="show_info('2.112')">
+      <path d="M 221 346
+            L 221 385
+            L 266 385
+            L 266 346
+            Z"/></a> <!-- 2.112 -->
+
+  <a class="timetableBtn" id="2.114" onClick="show_info('2.114')">
+      <path d="M 221 385
+            L 221 426
+            L 266 426
+            L 266 385
+            Z"/></a> <!-- 2.114 -->
+
+  <a class="timetableBtn" id="2.116" onClick="show_info('2.116')">
+      <path d="M 221 426
+            L 221 464
+            L 266 464
+            L 266 426
+            Z"/></a> <!-- 2.116 -->
+
+  <a class="timetableBtn" id="2.120A" onClick="show_info('2.120A')">
+      <path d="M 221 464
+            L 221 494
+            L 245 494
+            L 245 464
+            Z"/></a> <!-- 2.120A -->
+
+  <a class="timetableBtn" id="2.120" onClick="show_info('2.120')">
+      <path d="M 221 493
+            L 221 542
+            L 257 542
+            L 257 493
+            Z"/></a> <!-- 2.120 -->
+
+  <a class="timetableBtn" id="2.122" onClick="show_info('2.122')">
+      <path d="M 257 493
+            L 257 542
+            L 297 542
+            L 297 493
+            Z"/></a> <!-- 2.122 -->
+
+  <a class="timetableBtn" id="2.124" onClick="show_info('2.124')">
+      <path d="M 297 493
+            L 297 542
+            L 337 542
+            L 337 493
+            Z"/></a> <!-- 2.124 -->
+
+  <a class="timetableBtn" id="2.126" onClick="show_info('2.126')">
+      <path d="M 337 493
+            L 337 542
+            L 377 542
+            L 377 493
+            Z"/></a> <!-- 2.126 -->
+
+  <a class="timetableBtn" id="2.127" onClick="show_info('2.127')">
+      <path d="M 377 493
+            L 377 542
+            L 417 542
+            L 417 493
+            Z"/></a> <!-- 2.127 -->
+
+  <a class="timetableBtn" id="2.1" onClick="show_info('2.1')">
+      <path d="M 417 510
+            L 417 542
+            L 443 542
+            L 443 510
+            Z"/></a> <!-- 2.1 -->
+
+  <a class="timetableBtn" id="2.3" onClick="show_info('2.3')">
+      <path d="M 443 510
+            L 443 542
+            L 476 542
+            L 476 510
+            Z"/></a> <!-- 2.3 -->
+
+  <a class="timetableBtn" id="2.4" onClick="show_info('2.4')">
+      <path d="M 476 510
+            L 476 542
+            L 497 542
+            L 497 510
+            Z"/></a> <!-- 2.4 -->
+
+  <a class="timetableBtn" id="2.6" onClick="show_info('2.6')">
+      <path d="M 497 510
+            L 497 542
+            L 532 542
+            L 532 510
+            Z"/></a> <!-- 2.6 -->
+
+  <a class="timetableBtn" id="2.8" onClick="show_info('2.8')">
+      <path d="M 532 510
+            L 532 542
+            L 554 542
+            L 554 510
+            Z"/></a> <!-- 2.8 -->
+
+  <a class="timetableBtn" id="2.10" onClick="show_info('2.10')">
+      <path d="M 554 510
+            L 554 542
+            L 629 542
+            L 629 510
+            Z"/></a> <!-- 2.10 -->
+
+  <a class="timetableBtn" id="2.12" onClick="show_info('2.12')">
+      <path d="M 647 510
+            L 647 542
+            L 672 542
+            L 672 510
+            Z"/></a> <!-- 2.12 -->
+
+  <a class="timetableBtn" id="2.14" onClick="show_info('2.14')">
+      <path d="M 671 510
+            L 671 542
+            L 692 542
+            L 692 510
+            Z"/></a> <!-- 2.14 -->
+
+  <a class="timetableBtn" id="2.16" onClick="show_info('2.16')">
+      <path d="M 692 510
+            L 692 542
+            L 729 542
+            L 729 510
+            Z"/></a> <!-- 2.16 -->
+
+
+  <a class="timetableBtn" id="2.20" onClick="show_info('2.20')">
+      <path d="M 746 510
+            L 746 542
+            L 777 542
+            L 777 510
+            Z"/></a> <!-- 2.20 -->
+
+  <a class="timetableBtn" id="2.22" onClick="show_info('2.22')">
+      <path d="M 746 488
+            L 746 510
+            L 777 510
+            L 777 488
+            Z"/></a> <!-- 2.22 -->
+
+  <a class="timetableBtn" id="2.24" onClick="show_info('2.24')">
+      <path d="M 746 462
+            L 746 488
+            L 777 488
+            L 777 462
+            Z"/></a> <!-- 2.24 -->
+
+  <a class="timetableBtn" id="2.26" onClick="show_info('2.26')">
+      <path d="M 746 436
+            L 746 462
+            L 777 462
+            L 777 436
+            Z"/></a> <!-- 2.26 -->
+
+  <a class="timetableBtn" id="2.28" onClick="show_info('2.28')">
+      <path d="M 746 392
+            L 746 418
+            L 777 418
+            L 777 392
+            Z"/></a> <!-- 2.28 -->
+
+  <a class="timetableBtn" id="2.30" onClick="show_info('2.30')">
+      <path d="M 746 364
+            L 746 392
+            L 777 392
+            L 777 364
+            Z"/></a> <!-- 2.30 -->
+
+  <a class="timetableBtn" id="2.32" onClick="show_info('2.32')">
+      <path d="M 746 340
+            L 746 364
+            L 777 364
+            L 777 340
+            Z"/></a> <!-- 2.32 -->
+
+  <a class="timetableBtn" id="2.34" onClick="show_info('2.34')">
+      <path d="M 746 320
+            L 746 340
+            L 777 340
+            L 777 320
+            Z"/></a> <!-- 2.34 -->
+
+  <a class="timetableBtn" id="2.36" onClick="show_info('2.36')">
+      <path d="M 746 297
+            L 746 320
+            L 777 320
+            L 777 297
+            Z"/></a> <!-- 2.36 -->
+
+  <a class="timetableBtn" id="2.38" onClick="show_info('2.38')">
+      <path d="M 746 274
+            L 746 297
+            L 777 297
+            L 777 274
+            Z"/></a> <!-- 2.38 -->
+
+  <a class="timetableBtn" id="2.40" onClick="show_info('2.40')">
+      <path d="M 746 252
+            L 746 275
+            L 777 275
+            L 777 252
+            Z"/></a> <!-- 2.40 -->
+
+  <a class="timetableBtn" id="2.42" onClick="show_info('2.42')">
+      <path d="M 746 230
+            L 746 252
+            L 777 252
+            L 777 230
+            Z"/></a> <!-- 2.42 -->
+
+  <a class="timetableBtn" id="2.44" onClick="show_info('2.44')">
+      <path d="M 746 207
+            L 746 230
+            L 777 230
+            L 777 207
+            Z"/></a> <!-- 2.44 -->
+
+  <a class="timetableBtn" id="2.46" onClick="show_info('2.46')">
+      <path d="M 746 176
+            L 746 207
+            L 777 207
+            L 777 176
+            Z"/></a> <!-- 2.46 -->
+
+  <a class="timetableBtn" id="2.48" onClick="show_info('2.48')">
+      <path d="M 746 145
+            L 746 177
+            L 777 177
+            L 777 145
+            Z"/></a> <!-- 2.48 -->
+
+  <a class="timetableBtn" id="2.50" onClick="show_info('2.50')">
+      <path d="M 746 115
+            L 746 145
+            L 777 145
+            L 777 115
+            Z"/></a> <!-- 2.50 -->
+
+  <a class="timetableBtn" id="2.52" onClick="show_info('2.52')">
+      <path d="M 746 83
+            L 746 115
+            L 777 115
+            L 777 83
+            Z"/></a> <!-- 2.52 -->
+
+  <a class="timetableBtn" id="2.54" onClick="show_info('2.54')">
+      <path d="M 746 32
+            L 746 66
+            L 777 66
+            L 777 32
+            Z"/></a> <!-- 2.54 -->
+
+  <a class="timetableBtn" id="2.58" onClick="show_info('2.58')">
+      <path d="M 701 32
+            L 701 66
+            L 734 66
+            L 734 32
+            Z"/></a> <!-- 2.58 -->
+
+  <a class="timetableBtn" id="2.60" onClick="show_info('2.60')">
+      <path d="M 669 32
+            L 669 66
+            L 701 66
+            L 701 32
+            Z"/></a> <!-- 2.60 -->
+
+  <a class="timetableBtn" id="2.62" onClick="show_info('2.62')">
+      <path d="M 643 32
+            L 643 66
+            L 670 66
+            L 670 32
+            Z"/></a> <!-- 2.62 -->
+
+  <a class="timetableBtn" id="2.64" onClick="show_info('2.64')">
+      <path d="M 622 32
+            L 622 66
+            L 643 66
+            L 643 32
+            Z"/></a> <!-- 2.64 -->
+
+  <a class="timetableBtn" id="2.66" onClick="show_info('2.66')">
+      <path d="M 600 32
+            L 600 66
+            L 622 66
+            L 622 32
+            Z"/></a> <!-- 2.66 -->
+
+  <a class="timetableBtn" id="2.68" onClick="show_info('2.68')">
+      <path d="M 572 32
+            L 572 66
+            L 600 66
+            L 600 32
+            Z"/></a> <!-- 2.68 -->
+
+  <a class="timetableBtn" id="2.69" onClick="show_info('2.69')">
+      <path d="M 554 32
+            L 554 66
+            L 573 66
+            L 573 32
+            Z"/></a> <!-- 2.69 -->
+
+
+  <a class="timetableBtn" id="2.70" onClick="show_info('2.70')">
+      <path d="M 520 32
+            L 520 66
+            L 554 66
+            L 554 32
+            Z"/></a> <!-- 2.70 -->
+
+  <a class="timetableBtn" id="2.71" onClick="show_info('2.71')">
+      <path d="M 480 32
+            L 480 110
+            L 500 110
+            L 500 66
+            L 520 66
+            L 520 32
+            Z"/></a> <!-- 2.71 -->
+
+  <a class="timetableBtn" id="2.86" onClick="show_info('2.86')">
+      <path d="M 418 32
+            L 418 75
+            L 438 75
+            L 438 63
+            L 480 63
+            L 480 32
+            Z"/></a> <!-- 2.86 -->
+
+  <a class="timetableBtn" id="2.88" onClick="show_info('2.88')">
+      <path d="M 387 32
+            L 387 66
+            L 418 66
+            L 418 32
+            Z"/></a> <!-- 2.88 -->
+
+  <a class="timetableBtn" id="2.89" onClick="show_info('2.89')">
+      <path d="M 346 32
+            L 346 80
+            L 387 80
+            L 387 32
+            Z"/></a> <!-- 2.89 -->
+
+  <a class="timetableBtn" id="2.90" onClick="show_info('2.90')">
+      <path d="M 306 32
+            L 306 80
+            L 346 80
+            L 346 32
+            Z"/></a> <!-- 2.90 -->
+
+  <a class="timetableBtn" id="2.92" onClick="show_info('2.92')">
+      <path d="M 266 32
+            L 266 80
+            L 306 80
+            L 306 32
+            Z"/></a> <!-- 2.92 -->
+
+  <a class="timetableBtn" id="2.94" onClick="show_info('2.94')">
+      <path d="M 221 32
+            L 221 52
+            L 239 52
+            L 239 80
+            L 266 80
+            L 266 32
+            Z"/></a> <!-- 2.94 -->
+
+  <a class="timetableBtn" id="2.96" onClick="show_info('2.96')">
+      <path d="M 221 52
+            L 221 106
+            L 248 106
+            L 248 80
+            L 239 80
+            L 239 52
+            Z"/></a> <!-- 2.96 -->
+
+  <a class="timetableBtn" id="2.71A" onClick="show_info('2.71A')">
+      <path d="M 464 63
+            L 464 110
+            L 480 110
+            L 480 63
+            Z"/></a> <!-- 2.71A -->
+
+  <a class="timetableBtn" id="2.95" onClick="show_info('2.95')">
+      <path d="M 307 93
+            L 307 123
+            L 331 123
+            L 331 93
+            Z"/></a> <!-- 2.95 -->
+
+
+  <a class="timetableBtn" id="2.93" onClick="show_info('2.93')">
+      <path d="M 346 93
+            L 346 123
+            L 369 123
+            L 369 93
+            Z"/></a> <!-- 2.93 -->
+
+  <a class="timetableBtn" id="2.91" onClick="show_info('2.91')">
+      <path d="M 369 93
+            L 369 123
+            L 391 123
+            L 391 93
+            Z"/></a> <!-- 2.91 -->
+
+  <a class="timetableBtn" id="2.87" onClick="show_info('2.87')">
+      <path d="M 391 93
+            L 391 123
+            L 418 123
+            L 418 93
+            Z"/></a> <!-- 2.87 -->
+
+  <a class="timetableBtn" id="2.99" onClick="show_info('2.99')">
+      <path d="M 279 126
+            L 279 159
+            L 302 159
+            L 302 126
+            Z"/></a> <!-- 2.99 -->
+
+  <a class="timetableBtn" id="2.101" onClick="show_info('2.101')">
+      <path d="M 279 159
+            L 279 189
+            L 302 189
+            L 302 159
+            Z"/></a> <!-- 2.101 -->
+
+  <a class="timetableBtn" id="2.103" onClick="show_info('2.103')">
+      <path d="M 279 189
+            L 279 223
+            L 302 223
+            L 302 189
+            Z"/></a> <!-- 2.103 -->
+
+  <a class="timetableBtn" id="2.105" onClick="show_info('2.105')">
+      <path d="M 279 223
+            L 279 253
+            L 302 253
+            L 302 223
+            Z"/></a> <!-- 2.105 -->
+
+  <a class="timetableBtn" id="2.107" onClick="show_info('2.107')">
+      <path d="M 279 253
+            L 279 285
+            L 302 285
+            L 302 253
+            Z"/></a> <!-- 2.107 -->
+
+  <a class="timetableBtn" id="2.109" onClick="show_info('2.109')">
+      <path d="M 279 285
+            L 279 315
+            L 302 315
+            L 302 285
+            Z"/></a> <!-- 2.109 -->
+
+  <a class="timetableBtn" id="2.111" onClick="show_info('2.111')">
+      <path d="M 279 315
+            L 279 346
+            L 302 346
+            L 302 315
+            Z"/></a> <!-- 2.111 -->
+
+  <a class="timetableBtn" id="2.113" onClick="show_info('2.113')">
+      <path d="M 279 346
+            L 279 381
+            L 302 381
+            L 302 346
+            Z"/></a> <!-- 2.113 -->
+
+  <a class="timetableBtn" id="2.115" onClick="show_info('2.115')">
+      <path d="M 279 381
+            L 279 420
+            L 302 420
+            L 302 381
+            Z"/></a> <!-- 2.115 -->
+
+  <a class="timetableBtn" id="2.119" onClick="show_info('2.119')">
+      <path d="M 305 439
+            L 305 478
+            L 323 478
+            L 323 439
+            Z"/></a> <!-- 2.119 -->
+
+
+  <a class="timetableBtn" id="2.121" onClick="show_info('2.121')">
+      <path d="M 323 439
+            L 323 478
+            L 362 478
+            L 362 439
+            Z"/></a> <!-- 2.121 -->
+
+
+  <a class="timetableBtn" id="2.123" onClick="show_info('2.123')">
+      <path d="M 362 439
+            L 362 478
+            L 401 478
+            L 401 439
+            Z"/></a> <!-- 2.123 -->
+
+  <a class="timetableBtn" id="2.125" onClick="show_info('2.125')">
+      <path d="M 400 439
+            L 400 478
+            L 419 478
+            L 419 439
+            Z"/></a> <!-- 2.125 -->
+
+
+  <a class="timetableBtn" id="2.72" onClick="show_info('2.72')">
+      <path d="M 480 123
+            L 480 165
+            L 501 165
+            L 501 123
+            Z"/></a> <!-- 2.72 -->
+
+  <a class="timetableBtn" id="2.74" onClick="show_info('2.74')">
+      <path d="M 480 165
+            L 480 204
+            L 501 204
+            L 501 165
+            Z"/></a> <!-- 2.74 -->
+
+  <a class="timetableBtn" id="2.75" onClick="show_info('2.75')">
+      <path d="M 480 204
+            L 480 243
+            L 501 243
+            L 501 204
+            Z"/></a> <!-- 2.75 -->
+
+  <a class="timetableBtn" id="2.76" onClick="show_info('2.76')">
+      <path d="M 480 243
+            L 480 284
+            L 501 284
+            L 501 243
+            Z"/></a> <!-- 2.76 -->
+
+  <a class="timetableBtn" id="2.80" onClick="show_info('2.80')">
+      <path d="M 480 284
+            L 480 324
+            L 501 324
+            L 501 284
+            Z"/></a> <!-- 2.80 -->
+
+  <a class="timetableBtn" id="2.81" onClick="show_info('2.81')">
+      <path d="M 480 324
+            L 480 366
+            L 501 366
+            L 501 324
+            Z"/></a> <!-- 2.81 -->
+
+  <a class="timetableBtn" id="2.82" onClick="show_info('2.82')">
+      <path style="color:red" d="M 480 365
+            L 480 403
+            L 501 403
+            L 501 365
+            Z"/></a> <!-- 2.82 -->
+
+  <a class="timetableBtn" id="2.83" onClick="show_info('2.83')">
+      <path d="M 480 403
+            L 480 441
+            L 501 441
+            L 501 403
+            Z"/></a> <!-- 2.83 -->
+
+  <a class="timetableBtn" id="2.65" onClick="show_info('2.65')">
+      <path d="M 515 79
+            L 515 111
+            L 568 111
+            L 568 79
+            Z"/></a> <!-- 2.65 -->
+
+  <a class="timetableBtn" id="2.63" onClick="show_info('2.63')">
+      <path d="M 568 79
+            L 568 111
+            L 654 111
+            L 654 79
+            Z"/></a> <!-- 2.63 -->
+
+  <a class="timetableBtn" id="2.61" onClick="show_info('2.61')">
+      <path d="M 653 79
+            L 653 111
+            L 701 111
+            L 701 79
+            Z"/></a> <!-- 2.61 -->
+
+  <a class="timetableBtn" id="2.55" onClick="show_info('2.55')">
+      <path d="M 669 111
+            L 669 138
+            L 701 138
+            L 701 111
+            Z"/></a> <!-- 2.55 -->
+
+  <a class="timetableBtn" id="2.53" onClick="show_info('2.53')">
+      <path d="M 669 138
+            L 669 166
+            L 701 166
+            L 701 138
+            Z"/></a> <!-- 2.53 -->
+
+  <a class="timetableBtn" id="2.45" onClick="show_info('2.45')">
+      <path d="M 668 165
+            L 668 233
+            L 693 233
+            L 693 165
+            Z"/></a> <!-- 2.45 -->
+
+  <a class="timetableBtn" id="2.39" onClick="show_info('2.39')">
+      <path d="M 668 233
+            L 668 271
+            L 702 271
+            L 702 233
+            Z"/></a> <!-- 2.39 -->
+
+  <a class="timetableBtn" id="2.41" onClick="show_info('2.41')">
+      <path d="M 701 233
+            L 701 271
+            L 731 271
+            L 731 233
+            Z"/></a> <!-- 2.41 -->
+
+  <a class="timetableBtn" id="2.43" onClick="show_info('2.43')">
+      <path d="M 692 201
+            L 692 233
+            L 731 233
+            L 731 201
+            Z"/></a> <!-- 2.43 -->
+
+  <a class="timetableBtn" id="2.49" onClick="show_info('2.49')">
+      <path d="M 693 165
+            L 693 190
+            L 731 190
+            L 731 165
+            Z"/></a> <!-- 2.49 -->
+
+  <a class="timetableBtn" id="2.51" onClick="show_info('2.51')">
+      <path d="M 701 127
+            L 701 165
+            L 731 165
+            L 731 127
+            Z"/></a> <!-- 2.51 -->
+
+  <a class="timetableBtn" id="2.37" onClick="show_info('2.37')">
+      <path d="M 668 271
+            L 668 331
+            L 708 331
+            L 708 271
+            Z"/></a> <!-- 2.37 -->
+
+  <a class="timetableBtn" id="2.33" onClick="show_info('2.33')">
+      <path d="M 707 271
+            L 707 331
+            L 731 331
+            L 731 271
+            Z"/></a> <!-- 2.33 -->
+
+  <a class="timetableBtn" id="2.29" onClick="show_info('2.29')">
+      <path d="M 668 331
+            L 668 360
+            L 731 360
+            L 731 331
+            Z"/></a> <!-- 2.29 -->
+
+  <a class="timetableBtn" id="2.67A" onClick="show_info('2.67A')">
+      <path d="M 515 123
+            L 515 165
+            L 541 165
+            L 541 123
+            Z"/></a> <!-- 2.67A -->
+
+  <a class="timetableBtn" id="2.67" onClick="show_info('2.67')">
+      <path d="M 563 125
+            L 563 165
+            L 645 165
+            L 645 125
+            Z"/></a> <!-- 2.67 -->
+
+  <a class="timetableBtn" id="Plant Room" onClick="show_info('Plant Room')">
+      <path d="M 515 165
+            L 515 270
+            L 668 270
+            L 668 165
+            Z"/></a> <!-- PR -->
+
+  <a class="timetableBtn" id="2.25B" onClick="show_info('2.25B')">
+      <path d="M 530 315
+            L 530 374
+            L 621 374
+            L 621 307
+            L 553 307
+            L 553 315
+            Z"/></a> <!-- 2.25B -->
+
+  <a class="timetableBtn" id="2.25A" onClick="show_info('2.25A')">
+      <path d="M 530 374
+            L 530 441
+            L 621 441
+            L 621 374
+            Z"/></a> <!-- 2.25A -->
+
+  <a class="timetableBtn" id="2.19" onClick="show_info('2.19')">
+      <path d="M 621 374
+            L 621 441
+            L 732 441
+            L 732 374
+            Z"/></a> <!-- 2.19 -->
+
+  <a class="timetableBtn" id="2.9" onClick="show_info('2.9')">
+      <path d="M 530 441
+            L 530 498
+            L 621 498
+            L 621 441
+            Z"/></a> <!-- 2.9 -->
+
+  <a class="timetableBtn" id="2.13" onClick="show_info('2.13')">
+      <path d="M 621 441
+            L 621 498
+            L 650 498
+            L 650 441
+            Z"/></a> <!-- 2.13 -->
+
+  <a class="timetableBtn" id="2.15" onClick="show_info('2.15')">
+      <path d="M 649 441
+            L 649 498
+            L 720 498
+            L 720 441
+            Z"/></a> <!-- 2.15 -->
+
+</svg>
+
+<form id="div3" onsubmit="return change_floor(this)" method="get">
+  <input type="submit" onclick="steps(-1)" value="Previous" >
+  <label for="i1" id="instruction">
+    <script>
+        if(sessionStorage.getItem("instruction") != null){
+            document.write(sessionStorage.getItem("instruction"));
+        }
+        else{
+          document.write("Instructions to be seen...");
+        }
+    </script>
+  </label>
+  <input type="submit" onclick="steps(1)" value="Next">
+</form>
+
+<div id="div_floors">
+  <li><a href="{% url 'second_floor' %}"><button type="button">2</button></a></li>
+  <li><a href="{% url 'first_floor' %}"><button type="button">1</button></a></li>
+  <li><a href="{% url 'half_floor' %}"><button type="button">L1</button></a></li>
+  <li><a href="{% url 'ground_floor' %}"><button type="button">G</button></a></li>
+</ul>
+</div>
+
+</div>
+
+<script>
+sessionStorage.setItem("floor", 3);
+</script>
+
+<script src="{% static 'js/java.js' %}">
+</script>
+<script src="{% static 'js/timetable.js' %}">
+</script>
+
+</body>
+</html>
+
+
+
+

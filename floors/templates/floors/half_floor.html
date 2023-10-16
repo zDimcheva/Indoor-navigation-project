@@ -1,0 +1,948 @@
+{% load static %}
+
+<html>
+<head>
+  <style>
+    circle{
+      visibility: hidden;
+    }
+  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>  
+    
+<body>
+
+<div id="div1"> 
+
+	<svg width="200" height="200">
+		<image href="{% static 'images/mira logo.png' %}" height="200" width="200"/>
+	</svg>
+
+  <form onsubmit="return change_floor(this)">
+    <label for="i1">Choose your start point from the list:</label>
+    <input list="browsers" name="i1" id="i1" value="" oninput="input_values()">
+    <datalist id="browsers">
+      <option value="Loading Bay Entrance">
+        <option value="Lift GF">
+        <option value="Disabled Lift GF">
+        <option value="ITS Office 1">
+        <option value="ITS Office 2">
+        <option value="ITS Help Desk">
+        <option value="Main Entrance">
+        <option value="G41">
+        <option value="G36">
+        <option value="G37">
+        <option value="G35">
+        <option value="G33">
+        <option value="G33a">
+        <option value="G23">
+        <option value="G20">
+        <option value="G18">
+        <option value="G17">
+        <option value="G16">
+        <option value="G14">
+        <option value="G13">
+        <option value="G12">
+        <option value="G11">
+        <option value="G10">
+        <option value="G7">
+        <option value="G6">
+        <option value="Lift L1">
+        <option value="Disabled Lift L1">
+        <option value="LF1">
+        <option value="LF7">
+        <option value="LF8">
+        <option value="1.1">
+        <option value="LF11">
+        <option value="LF12">
+        <option value="LF9">
+        <option value="LF16">
+        <option value="LF39">
+        <option value="LF17">
+        <option value="LF15">
+        <option value="LF34">
+        <option value="LF21">
+        <option value="LF22">
+        <option value="LF31">
+        <option value="LF23">
+        <option value="LF24">
+        <option value="LF25">
+        <option value="LF26">
+        <option value="LF27">
+        <option value="LF28">
+        <option value="LF29">
+        <option value="Lift 1">
+        <option value="Disabled Lift 1">
+        <option value="1.19">
+        <option value="1.18A">
+        <option value="1.18B">
+        <option value="1.20">
+        <option value="1.25">
+        <option value="1.24">
+        <option value="1.24A">
+        <option value="1.23">
+        <option value="1.10">
+        <option value="1.15">
+        <option value="1.8">
+        <option value="1.5">
+        <option value="1.4">
+        <option value="1.3">
+        <option value="Courtyard">
+        <option value="IT Building Bridge">
+        <option value="Elevated Walkway">
+        <option value="Lift 2">
+        <option value="Disabled Lift 2">
+        <option value="2.1">
+        <option value="2.3">
+        <option value="2.4">
+        <option value="2.6">
+        <option value="2.8">
+        <option value="2.10">
+        <option value="2.12">
+        <option value="2.14">
+        <option value="2.16">
+        <option value="2.13">
+        <option value="2.15">
+        <option value="2.9">
+        <option value="2.19">
+        <option value="2.20">
+        <option value="2.22">
+        <option value="2.24">
+        <option value="2.26">
+        <option value="2.28">
+        <option value="2.30">
+        <option value="2.32">
+        <option value="2.34">
+        <option value="2.36">
+        <option value="2.38">
+        <option value="2.40">
+        <option value="2.42">
+        <option value="2.44">
+        <option value="2.46">
+        <option value="2.48">
+        <option value="2.50">
+        <option value="2.52">
+        <option value="2.54">
+        <option value="2.58">
+        <option value="2.60">
+        <option value="2.62">
+        <option value="2.64">
+        <option value="2.66">
+        <option value="2.68">
+        <option value="2.69">
+        <option value="2.70">
+        <option value="2.71">
+        <option value="2.65">
+        <option value="2.63">
+        <option value="2.61">
+        <option value="2.55">
+        <option value="2.53">
+        <option value="2.51">
+        <option value="2.49">
+        <option value="2.43">
+        <option value="2.41">
+        <option value="2.39">
+        <option value="2.37">
+        <option value="2.33">
+        <option value="2.29/2.31">
+        <option value="2.25B">
+        <option value="2.25A">
+        <option value="2.83">
+        <option value="2.82">
+        <option value="2.81">
+        <option value="2.80">
+        <option value="2.76">
+        <option value="2.75">
+        <option value="2.74">
+        <option value="2.72">
+        <option value="2.67">
+        <option value="2.67A">
+        <option value="Plant Room">
+        <option value="2.71A">
+        <option value="2.86">
+        <option value="2.88">
+        <option value="2.89">
+        <option value="2.90">
+        <option value="2.92">
+        <option value="2.94">
+        <option value="2.96">
+        <option value="2.87">
+        <option value="2.91">
+        <option value="2.93">
+        <option value="2.95">
+        <option value="2.99">
+        <option value="2.100">
+        <option value="2.101">
+        <option value="2.102">
+        <option value="2.104">
+        <option value="2.106">
+        <option value="2.108">
+        <option value="2.110">
+        <option value="2.112">
+        <option value="2.114">
+        <option value="2.116">
+        <option value="2.103">
+        <option value="2.105">
+        <option value="2.107">
+        <option value="2.109">
+        <option value="2.111">
+        <option value="2.113">
+        <option value="2.115">
+        <option value="2.119">
+        <option value="2.121">
+        <option value="2.123">
+        <option value="2.125">
+        <option value="2.120A">
+        <option value="2.120">
+        <option value="2.122">
+        <option value="2.124">
+        <option value="2.126">
+        <option value="2.127">
+        <option value="2.27/2.77">
+        <option value="2.45/2.47">
+    </datalist>
+    <label for="i2">Choose your end point from the list:</label>
+    <input list="browsers" name="i2" id="i2" value="" oninput="input_values()">
+    <datalist id="browsers">
+      <option value="G105">
+        <option value="Loading Bay Entrance">
+        <option value="Lift GF">
+        <option value="Disabled Lift GF">
+        <option value="ITS Office 1">
+        <option value="ITS Office 2">
+        <option value="ITS Help Desk">
+        <option value="Main Entrance">
+        <option value="G41">
+        <option value="G36">
+        <option value="G37">
+        <option value="G35">
+        <option value="G33">
+        <option value="G33a">
+        <option value="G23">
+        <option value="G20">
+        <option value="G18">
+        <option value="G17">
+        <option value="G16">
+        <option value="G14">
+        <option value="G13">
+        <option value="G12">
+        <option value="G11">
+        <option value="G10">
+        <option value="G7">
+        <option value="G6">
+        <option value="Lift L1">
+        <option value="Disabled Lift L1">
+        <option value="LF1">
+        <option value="LF7">
+        <option value="LF8">
+        <option value="1.1">
+        <option value="LF11">
+        <option value="LF12">
+        <option value="LF9">
+        <option value="LF16">
+        <option value="LF39">
+        <option value="LF17">
+        <option value="LF15">
+        <option value="LF34">
+        <option value="LF21">
+        <option value="LF22">
+        <option value="LF31">
+        <option value="LF23">
+        <option value="LF24">
+        <option value="LF25">
+        <option value="LF26">
+        <option value="LF27">
+        <option value="LF28">
+        <option value="LF29">
+        <option value="Lift 1">
+        <option value="Disabled Lift 1">
+        <option value="1.19">
+        <option value="1.18A">
+        <option value="1.18B">
+        <option value="1.20">
+        <option value="1.25">
+        <option value="1.24">
+        <option value="1.24A">
+        <option value="1.23">
+        <option value="1.10">
+        <option value="1.15">
+        <option value="1.8">
+        <option value="1.5">
+        <option value="1.4">
+        <option value="1.3">
+        <option value="Courtyard">
+        <option value="IT Building Bridge">
+        <option value="Elevated Walkway">
+        <option value="Lift 2">
+        <option value="Disabled Lift 2">
+        <option value="2.1">
+        <option value="2.3">
+        <option value="2.4">
+        <option value="2.6">
+        <option value="2.8">
+        <option value="2.10">
+        <option value="2.12">
+        <option value="2.14">
+        <option value="2.16">
+        <option value="2.13">
+        <option value="2.15">
+        <option value="2.9">
+        <option value="2.19">
+        <option value="2.20">
+        <option value="2.22">
+        <option value="2.24">
+        <option value="2.26">
+        <option value="2.28">
+        <option value="2.30">
+        <option value="2.32">
+        <option value="2.34">
+        <option value="2.36">
+        <option value="2.38">
+        <option value="2.40">
+        <option value="2.42">
+        <option value="2.44">
+        <option value="2.46">
+        <option value="2.48">
+        <option value="2.50">
+        <option value="2.52">
+        <option value="2.54">
+        <option value="2.58">
+        <option value="2.60">
+        <option value="2.62">
+        <option value="2.64">
+        <option value="2.66">
+        <option value="2.68">
+        <option value="2.69">
+        <option value="2.70">
+        <option value="2.71">
+        <option value="2.65">
+        <option value="2.63">
+        <option value="2.61">
+        <option value="2.55">
+        <option value="2.53">
+        <option value="2.51">
+        <option value="2.49">
+        <option value="2.43">
+        <option value="2.41">
+        <option value="2.39">
+        <option value="2.37">
+        <option value="2.33">
+        <option value="2.29/2.31">
+        <option value="2.25B">
+        <option value="2.25A">
+        <option value="2.83">
+        <option value="2.82">
+        <option value="2.81">
+        <option value="2.80">
+        <option value="2.76">
+        <option value="2.75">
+        <option value="2.74">
+        <option value="2.72">
+        <option value="2.67">
+        <option value="2.67A">
+        <option value="Plant Room">
+        <option value="2.71A">
+        <option value="2.86">
+        <option value="2.88">
+        <option value="2.89">
+        <option value="2.90">
+        <option value="2.92">
+        <option value="2.94">
+        <option value="2.96">
+        <option value="2.87">
+        <option value="2.91">
+        <option value="2.93">
+        <option value="2.95">
+        <option value="2.99">
+        <option value="2.100">
+        <option value="2.101">
+        <option value="2.102">
+        <option value="2.104">
+        <option value="2.106">
+        <option value="2.108">
+        <option value="2.110">
+        <option value="2.112">
+        <option value="2.114">
+        <option value="2.116">
+        <option value="2.103">
+        <option value="2.105">
+        <option value="2.107">
+        <option value="2.109">
+        <option value="2.111">
+        <option value="2.113">
+        <option value="2.115">
+        <option value="2.119">
+        <option value="2.121">
+        <option value="2.123">
+        <option value="2.125">
+        <option value="2.120A">
+        <option value="2.120">
+        <option value="2.122">
+        <option value="2.124">
+        <option value="2.126">
+        <option value="2.127">
+        <option value="2.27/2.77">
+        <option value="2.45/2.47">
+    </datalist>
+    <input type="submit" onclick="optimal_path()" value="Search">
+  </form>
+
+  <form class="toilet_buttons">
+    <label> Find closest toilet:</label>
+    <button class="toilet_m" onclick="find_toilet_men()"></button>
+    <button class="toilet_w" onclick="find_toilet_women()"></button>
+    <button class="toilet_d" onclick="find_toilet_disabled()"></button>
+  </form>
+  
+</div>
+   
+<div id="div2">    
+
+  {% for room in all_rooms %}
+  <div class="modal" id= "{{room.title}}" >
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Room: {{ room.title }}</h1>
+      {% if room.description %}<p style="overflow: hidden;max-width:800px;">Description: {{ room.description }}</p>{% endif %}
+      {% if room.capacity %}<p>Capacity: {{ room.capacity }}</p>{% endif %}
+      <button class="navigation_button" id="{{room.title}}">Directions</button>
+      <p class="table_header">Timetable: </p>
+      <table id="timetable-{{room.title}}" class="timetable">
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        {% for row in table %}
+        <tr>
+          <th>{{ row.5.0|time:"H:i" }}</th>
+          {% for value in row|slice:":5" %}
+                  <th></th>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="modal-content2" id="{{room.title}}">  
+      <span class="close2">&times;</span>
+        <form onsubmit="return change_floor(this)">
+        <h2> Directions to {{room.title}}: </h2>
+        <label class="nav" for="i1">From room:</label>
+        <input list="browsers" name="i1" id="{{room.title}}" class="nav_start" value="">
+        <datalist id="browsers">
+          <option value="Loading Bay Entrance">
+            <option value="Lift GF">
+            <option value="Disabled Lift GF">
+            <option value="ITS Office 1">
+            <option value="ITS Office 2">
+            <option value="ITS Help Desk">
+            <option value="Main Entrance">
+            <option value="G41">
+            <option value="G36">
+            <option value="G37">
+            <option value="G35">
+            <option value="G33">
+            <option value="G33a">
+            <option value="G23">
+            <option value="G20">
+            <option value="G18">
+            <option value="G17">
+            <option value="G16">
+            <option value="G14">
+            <option value="G13">
+            <option value="G12">
+            <option value="G11">
+            <option value="G10">
+            <option value="G7">
+            <option value="G6">
+            <option value="Lift L1">
+            <option value="Disabled Lift L1">
+            <option value="LF1">
+            <option value="LF7">
+            <option value="LF8">
+            <option value="1.1">
+            <option value="LF11">
+            <option value="LF12">
+            <option value="LF9">
+            <option value="LF16">
+            <option value="LF39">
+            <option value="LF17">
+            <option value="LF15">
+            <option value="LF34">
+            <option value="LF21">
+            <option value="LF22">
+            <option value="LF31">
+            <option value="LF23">
+            <option value="LF24">
+            <option value="LF25">
+            <option value="LF26">
+            <option value="LF27">
+            <option value="LF28">
+            <option value="LF29">
+            <option value="Lift 1">
+            <option value="Disabled Lift 1">
+            <option value="1.19">
+            <option value="1.18A">
+            <option value="1.18B">
+            <option value="1.20">
+            <option value="1.25">
+            <option value="1.24">
+            <option value="1.24A">
+            <option value="1.23">
+            <option value="1.10">
+            <option value="1.15">
+            <option value="1.8">
+            <option value="1.5">
+            <option value="1.4">
+            <option value="1.3">
+            <option value="Courtyard">
+            <option value="IT Building Bridge">
+            <option value="Elevated Walkway">
+            <option value="Lift 2">
+            <option value="Disabled Lift 2">
+            <option value="2.1">
+            <option value="2.3">
+            <option value="2.4">
+            <option value="2.6">
+            <option value="2.8">
+            <option value="2.10">
+            <option value="2.12">
+            <option value="2.14">
+            <option value="2.16">
+            <option value="2.13">
+            <option value="2.15">
+            <option value="2.9">
+            <option value="2.19">
+            <option value="2.20">
+            <option value="2.22">
+            <option value="2.24">
+            <option value="2.26">
+            <option value="2.28">
+            <option value="2.30">
+            <option value="2.32">
+            <option value="2.34">
+            <option value="2.36">
+            <option value="2.38">
+            <option value="2.40">
+            <option value="2.42">
+            <option value="2.44">
+            <option value="2.46">
+            <option value="2.48">
+            <option value="2.50">
+            <option value="2.52">
+            <option value="2.54">
+            <option value="2.58">
+            <option value="2.60">
+            <option value="2.62">
+            <option value="2.64">
+            <option value="2.66">
+            <option value="2.68">
+            <option value="2.69">
+            <option value="2.70">
+            <option value="2.71">
+            <option value="2.65">
+            <option value="2.63">
+            <option value="2.61">
+            <option value="2.55">
+            <option value="2.53">
+            <option value="2.51">
+            <option value="2.49">
+            <option value="2.43">
+            <option value="2.41">
+            <option value="2.39">
+            <option value="2.37">
+            <option value="2.33">
+            <option value="2.29/2.31">
+            <option value="2.25B">
+            <option value="2.25A">
+            <option value="2.83">
+            <option value="2.82">
+            <option value="2.81">
+            <option value="2.80">
+            <option value="2.76">
+            <option value="2.75">
+            <option value="2.74">
+            <option value="2.72">
+            <option value="2.67">
+            <option value="2.67A">
+            <option value="Plant Room">
+            <option value="2.71A">
+            <option value="2.86">
+            <option value="2.88">
+            <option value="2.89">
+            <option value="2.90">
+            <option value="2.92">
+            <option value="2.94">
+            <option value="2.96">
+            <option value="2.87">
+            <option value="2.91">
+            <option value="2.93">
+            <option value="2.95">
+            <option value="2.99">
+            <option value="2.100">
+            <option value="2.101">
+            <option value="2.102">
+            <option value="2.104">
+            <option value="2.106">
+            <option value="2.108">
+            <option value="2.110">
+            <option value="2.112">
+            <option value="2.114">
+            <option value="2.116">
+            <option value="2.103">
+            <option value="2.105">
+            <option value="2.107">
+            <option value="2.109">
+            <option value="2.111">
+            <option value="2.113">
+            <option value="2.115">
+            <option value="2.119">
+            <option value="2.121">
+            <option value="2.123">
+            <option value="2.125">
+            <option value="2.120A">
+            <option value="2.120">
+            <option value="2.122">
+            <option value="2.124">
+            <option value="2.126">
+            <option value="2.127">
+            <option value="2.27/2.77">
+            <option value="2.45/2.47">
+        </datalist>
+        <label class="nav" for="i2">To:</label>
+        <input class="nav_start" value="{{room.title}}" readonly>
+        <button class="nav_find" type="submit" id="{{room.title}}">Find</button>
+        </form>
+    </div>
+
+  </div>
+  {% endfor %}
+
+
+  <div id="div_menu">
+    <form method="POST">
+    <ul>
+      <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+      {% if is_logged_uom %} <li><a href="{% url 'search' %}">Search</a></li> {% endif %}
+      <li><a href="{% url 'information' %}">Information</a></li>
+    </ul>
+    </form>
+  </div>
+
+  <svg width="1000" height="570" xmlns="http://www.w3.org/2000/svg">
+    
+  <image id="img" href="{% static 'images/Kilburn Building Lower First Floor.jpg' %}" height="600" width="1000"/>
+
+    <!-- LConnection to ground floor  -->
+  <circle cx="365" cy="95" r="4" style="fill:red"/>
+  <circle cx="405" cy="70" r="4" style="fill:violet"/>
+  <circle cx="405" cy="85" r="4" style="fill:red"/>
+  <circle cx="465" cy="470" r="4" style="fill:red"/>
+  <circle cx="365" cy="105" r="4" style="fill:red"/>
+  <circle cx="415" cy="105" r="4" style="fill:red"/>
+  <circle cx="415" cy="60" r="4" style="fill:red"/>
+
+    <!-- Connections to first floor  -->
+  <circle cx="385" cy="70" r="4" style="fill:green"/>
+  <circle cx="385" cy="85" r="4" style="fill:green"/>
+
+  <!-- LF29 - LF23  -->
+  <circle cx="405" cy="60" r="4" style="fill:violet"/>
+  <circle cx="425" cy="60" r="4" style="fill:blue"/>
+  <circle cx="425" cy="45" r="4" style="fill:blue"/>
+  <circle cx="460" cy="60" r="4" style="fill:blue"/>
+  <circle cx="460" cy="45" r="4" style="fill:blue"/>
+  <circle cx="500" cy="60" r="4" style="fill:blue"/>
+  <circle cx="500" cy="45" r="4" style="fill:blue"/>
+  <circle cx="535" cy="60" r="4" style="fill:blue"/>
+  <circle cx="535" cy="45" r="4" style="fill:blue"/>
+  <circle cx="570" cy="60" r="4" style="fill:blue"/>
+  <circle cx="570" cy="45" r="4" style="fill:blue"/>
+  <circle cx="605" cy="60" r="4" style="fill:blue"/>
+  <circle cx="605" cy="45" r="4" style="fill:blue"/>
+  <circle cx="640" cy="60" r="4" style="fill:blue"/>
+  <circle cx="640" cy="45" r="4" style="fill:blue"/>
+  <circle cx="655" cy="60" r="4" style="fill:violet"/>
+  <circle cx="655" cy="70" r="4" style="fill:violet"/>
+  <circle cx="665" cy="60" r="4" style="fill:violet"/>
+  <circle cx="555" cy="60" r="4" style="fill:blue"/>
+
+  <!-- LF9, 15, 16, 17, 21, 31, 39 -->
+  <circle cx="555" cy="165" r="4" style="fill:pink"/>
+  <circle cx="540" cy="165" r="4" style="fill:pink"/>
+  <circle cx="540" cy="145" r="4" style="fill:pink"/>
+  <circle cx="570" cy="165" r="4" style="fill:pink"/>
+  <circle cx="570" cy="145" r="4" style="fill:pink"/>
+  <circle cx="570" cy="175" r="4" style="fill:pink"/>
+
+  <circle cx="630" cy="165" r="4" style="fill:yellow"/>
+  <circle cx="630" cy="185" r="4" style="fill:yellow"/>
+
+  <circle cx="555" cy="185" r="4" style="fill:pink"/>
+  <circle cx="510" cy="185" r="4" style="fill:pink"/>
+  <circle cx="555" cy="220" r="4" style="fill:pink"/>
+  <circle cx="510" cy="220" r="4" style="fill:pink"/>
+  <circle cx="555" cy="235" r="4" style="fill:pink"/>
+  <circle cx="570" cy="235" r="4" style="fill:pink"/>
+  <circle cx="555" cy="290" r="4" style="fill:pink"/>
+  <circle cx="510" cy="290" r="4" style="fill:pink"/>
+  <circle cx="555" cy="335" r="4" style="fill:pink"/>
+  <circle cx="570" cy="335" r="4" style="fill:pink"/>
+
+  <!-- LF9, 8, 7, 1, Lecture 1.1 -->
+  <circle cx="555" cy="430" r="4" style="fill:purple"/>
+  <circle cx="630" cy="430" r="4" style="fill:purple"/>
+  <circle cx="630" cy="420" r="4" style="fill:purple"/>
+  <circle cx="650" cy="430" r="4" style="fill:purple"/>
+  <circle cx="650" cy="440" r="4" style="fill:purple"/>
+  <circle cx="665" cy="430" r="4" style="fill:purple"/>
+  <circle cx="555" cy="455" r="4" style="fill:purple"/>
+  <circle cx="530" cy="455" r="4" style="fill:purple"/>
+  <circle cx="530" cy="470" r="4" style="fill:purple"/>
+  <circle cx="530" cy="540" r="4" style="fill:purple"/>
+  <circle cx="500" cy="540" r="4" style="fill:green"/>
+  <circle cx="450" cy="540" r="4" style="fill:purple"/>
+  <circle cx="395" cy="540" r="4" style="fill:purple"/>
+  <circle cx="350" cy="540" r="4" style="fill:purple"/>
+  <circle cx="350" cy="480" r="4" style="fill:purple"/>
+
+  <!-- Lower left end -->
+  <circle cx="350" cy="465" r="4" style="fill:purple"/>
+  <circle cx="310" cy="465" r="4" style="fill:blue"/>
+  <circle cx="310" cy="445" r="4" style="fill:blue"/>
+  <circle cx="375" cy="465" r="4" style="fill:green"/>
+  <circle cx="375" cy="455" r="4" style="fill:green"/>
+  <circle cx="375" cy="480" r="4" style="fill:green"/>
+  <circle cx="415" cy="465" r="4" style="fill:green"/>
+  <circle cx="395" cy="480" r="4" style="fill:green"/>
+  <circle cx="490" cy="455" r="4" style="fill:green"/>
+  <circle cx="490" cy="470" r="4" style="fill:green"/>
+
+  <!-- LF16 and 9 inside + LF11, 12 -->
+  <circle cx="490" cy="470" r="4" style="fill:orange"/>
+  <circle cx="630" cy="385" r="4" style="fill:orange"/>
+  <circle cx="650" cy="385" r="4" style="fill:orange"/>
+  <circle cx="650" cy="400" r="4" style="fill:orange"/>
+
+  <!-- LF21 inside + LF22 -->
+  <circle cx="630" cy="95" r="4" style="fill:orange"/>
+  <circle cx="630" cy="80" r="4" style="fill:orange"/>
+  <circle cx="655" cy="95" r="4" style="fill:orange"/>
+
+  <a class="timetableBtn" id="LF31" onClick="show_info('LF31')">
+      <path d="M 447 67
+            L 447 193
+            L 512 193
+            L 512 148
+            L 549 148
+            L 549 67
+            L 512 67
+            Z"/></a> <!-- LF31 -->
+
+  <a class="timetableBtn" id="LF34" onClick="show_info('LF34')">
+      <path d="M 447 193
+              L 447 257
+              L 512 257
+              L 512 193
+              Z"/></a> <!-- LF34 -->
+
+  <a class="timetableBtn" id="LF39" onClick="show_info('LF39')">
+      <path d="M 447 257
+              L 447 382
+              L 512 382
+              L 512 257
+              Z"/></a> <!-- LF39 -->
+
+  <a class="timetableBtn" id="LF29" onClick="show_info('LF29')">
+      <path d="M 432 32
+              L 432 51
+              L 468 51
+              L 468 32
+              Z"/></a> <!-- LF29 -->
+
+
+  <a class="timetableBtn" id="LF28" onClick="show_info('LF28')">
+      <path d="M 468 32
+              L 468 51
+              L 504 51
+              L 504 32
+              Z"/></a> <!-- LF28 -->
+
+  <a class="timetableBtn" id="LF27" onClick="show_info('LF27')">
+      <path d="M 504 32
+              L 504 51
+              L 540 51
+              L 540 32
+              Z"/></a> <!-- LF27 -->
+
+  <a class="timetableBtn" id="LF26" onClick="show_info('LF26')">
+      <path d="M 540 32
+              L 540 51
+              L 576 51
+              L 576 32
+              Z"/></a> <!-- LF26 -->
+
+  <a class="timetableBtn" id="LF25" onClick="show_info('LF25')">
+      <path d="M 576 32
+              L 576 51
+              L 612 51
+              L 612 32
+              Z"/></a> <!-- LF25 -->
+
+  <a class="timetableBtn" id="LF24" onClick="show_info('LF24')">
+      <path d="M 612 32
+              L 612 51
+              L 648 51
+              L 648 32
+              Z"/></a> <!-- LF24 -->
+
+  <a class="timetableBtn" id="LF23" onClick="show_info('LF23')">
+      <path d="M 648 32
+              L 648 51
+              L 661 51
+              L 661 67
+              L 694 67
+              L 694 32
+              L 648 32
+              Z"/></a> <!-- LF23 -->
+
+  <a class="timetableBtn" id="LF22" onClick="show_info('LF22')">
+      <path d="M 562 67
+              L 562 87
+              L 637 87
+              L 637 67
+              Z"/></a> <!-- LF22 -->
+
+  <a class="timetableBtn" id="LF21" onClick="show_info('LF21')">
+      <path d="M 562 86
+              L 562 149
+              L 637 149
+              L 637 174
+              L 693 174
+              L 693 103
+              L 621 103
+              L 621 86
+              Z"/></a> <!-- LF21 -->
+
+  <a class="timetableBtn" id="LF15" onClick="show_info('LF15')">
+      <path d="M 622 173
+              L 622 256
+              L 693 256
+              L 693 173
+              Z"/></a> <!-- LF15 -->
+
+  <a class="timetableBtn" id="LF17" onClick="show_info('LF17')">
+      <path d="M 562 173
+              L 562 217
+              L 622 217
+              L 622 173
+              Z"/></a> <!-- LF17 -->
+
+  <a class="timetableBtn" id="LF16" onClick="show_info('LF16')">
+      <path d="M 562 217
+              L 562 319
+              L 693 319
+              L 693 256
+              L 622 256
+              L 622 217
+              Z"/></a> <!-- LF16 -->
+
+  <a class="timetableBtn" id="LF9" onClick="show_info('LF9')">
+      <path d="M 562 319
+              L 562 422
+              L 645 422
+              L 645 380
+              L 693 380
+              L 693 319
+              Z"/></a> <!-- LF9 -->
+
+  <a class="timetableBtn" id="LF12" onClick="show_info('LF12')">
+      <path d="M 645 380
+              L 645 397
+              L 663 397
+              L 663 423
+              L 693 423
+              L 693 380
+              Z"/></a> <!-- LF12 -->
+
+  <a class="timetableBtn" id="LF11" onClick="show_info('LF11')">
+      <path d="M 645 397
+              L 645 423
+              L 663 423
+              L 663 397
+              Z"/></a> <!-- LF11 -->
+
+  <a class="timetableBtn" id="1.1" onClick="show_info('1.1')">
+      <path d="M 580 440
+              L 580 549
+              L 693 549
+              L 693 440
+              Z"/></a> <!-- 1.1 -->
+
+  <a class="timetableBtn" id="LF8" onClick="show_info('LF8')">
+      <path d="M 495 462
+              L 495 549
+              L 560 549
+              L 560 462
+              Z"/></a> <!-- LF8 -->
+
+  <a class="timetableBtn" id="LF7" onClick="show_info('LF7')">
+      <path d="M 444 497
+              L 444 549
+              L 495 549
+              L 495 497
+              Z"/></a> <!-- LF7 -->
+
+  <a class="timetableBtn" id="LF1" onClick="show_info('LF1')">
+      <path d="M 302 480
+              L 302 549
+              L 392 549
+              L 392 480
+              Z"/></a> <!-- LF1 -->
+
+</svg>
+
+<form id="div3" onsubmit="return change_floor(this)" method="get">
+  <input type="submit" onclick="steps(-1)" value="Previous">
+  <label for="i1" id="instruction">
+    <script>
+        if(sessionStorage.getItem("instruction") != null){
+            document.write(sessionStorage.getItem("instruction"));
+        }
+        else{
+          document.write("Instructions to be seen...");
+        }
+    </script>
+  </label>
+  <input type="submit" onclick="steps(1)" value="Next">
+</form>
+
+<div id="div_floors">
+  <li><a href="{% url 'second_floor' %}"><button type="button">2</button></a></li>
+  <li><a href="{% url 'first_floor' %}"><button type="button">1</button></a></li>
+  <li><a href="{% url 'half_floor' %}"><button type="button">L1</button></a></li>
+  <li><a href="{% url 'ground_floor' %}"><button type="button">G</button></a></li>
+</ul>
+</div>
+
+</div>
+
+<script>
+sessionStorage.setItem("floor", 1);
+</script>
+
+<script src="{% static 'js/java.js' %}">
+</script>
+<script src="{% static 'js/timetable.js' %}">
+</script>
+
+</body>
+</html>
+
+
+
+

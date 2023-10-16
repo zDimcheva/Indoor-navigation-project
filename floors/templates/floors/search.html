@@ -1,0 +1,298 @@
+{% load static %}
+
+<html>
+<head>
+  <style>
+    /* Style for the menu */
+    .menu {
+      width: 100%;
+      height: 40%;
+      overflow: auto;
+    }
+    .menu ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu li {
+      border-bottom: 10px solid white;
+    }
+    .menu li a {
+      margin: 20px;
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: white;
+      font-size: 15pt;
+    }
+
+    /* Style for the content */
+    .content {
+      width: 90%;
+      padding: 20px;
+      margin-left: 50px;
+    }
+    .content h2 {
+      margin-top: 0;
+    }
+    p{
+      width: 100%;
+    }
+
+    #section1{
+        color: #312450;
+    }
+    #section2{
+        color: #312450;
+    }
+    #section3{
+        color: #312450;
+    }
+
+    #table{
+      max-height: 200px;
+      overflow: auto;
+    }
+
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #a68fa6;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #312450;
+      color: white;
+      position: sticky; 
+      top: 0; 
+      z-index: 1;
+    }
+    
+  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>  
+
+<body>
+
+<div id="search"> 
+    <svg width="200" height="200">
+        <image href="{% static 'images/mira logo.png' %}" height="200" width="200"/>
+    </svg>
+
+    <label style="font-size:20pt;margin:0px;padding-bottom: 30px;padding-top: 30px;border-bottom: 10px solid white;"> Choose what you want to search: </label>
+    
+    <div class="menu">
+      <ul>
+        <li><a href="#" class="active" onclick="showInfo('section1')">Rooms</a></li>
+        <li><a href="#" onclick="showInfo('section2')">Events</a></li>
+        <li><a href="#" onclick="showInfo('section3')">Lecturer's offices</a></li>
+      </ul>
+    </div>
+
+</div>
+
+<div id="div2"> 
+
+    <div id="div_menu">
+        <form method="POST">
+        <ul>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+            <li><a href="{% url 'ground_floor' %}">Navigation</a></li>
+            <li><a href="{% url 'information' %}">Information</a></li>
+        </ul>
+        </form>
+    </div>
+
+    <label style="color:#312450"> Search for exact match or closest matches: </label>
+    <select name="mode" id="mode-select">
+      <option value="fuzzy">Closest Match</option>
+      <option value="exact">Exact Match</option>
+    </select>
+
+
+    <div id="search-field">
+        <form action="{% url 'search' %}" method="get" id="search-form">
+            <div class="form-group">
+                <input type="text" name="q" id="search-input" placeholder="Search...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+      const modeSelect = document.querySelector('#mode-select');
+    
+      modeSelect.addEventListener('change', handleModeChange);
+    
+      function handleModeChange() {
+        const mode = modeSelect.value;
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+    
+        if (mode === 'exact') {
+          searchForm.setAttribute('action', '/search-exact/');
+          searchInput.setAttribute('placeholder', 'Exact search...');
+        } else {
+          searchForm.setAttribute('action', '/search-fuzzy/');
+          searchInput.setAttribute('placeholder', 'Fuzzy search...');
+        }
+      }
+      
+      $('#mode-select').on('change', function() {
+          var mode = $('#mode-select').val();
+          console.log(mode);
+          $.ajax({
+            type: "GET",
+            url: 'search', 
+            dataType: 'json',
+            data:{'mode': mode},
+            success: function (response) {
+               console.log(response);
+            }
+          })
+        });
+    
+    </script>
+
+  <div class="content">
+      <div id="section1" style="display:none" data-parent="section1-link">    
+
+        <h1 style="color:#312450">Search Results</h1> {% if query %} <h1>for "{{ query }}"</h1> {% endif %}
+        <h2 style="color:#312450">Rooms</h2>
+        <ul id="room-list">
+          {% if rooms %}
+          <div id="table">
+          <table id="customers">
+            <tr>
+              <th>Room name</th>
+              <th>Description</th>
+              <th>Capacity</th>
+              <th>Floor</th>
+              <th>Room type</th>
+            </tr>  
+            {% for room in rooms %}
+              <tr>
+              <td>{{ room.title }}</td>
+              <td style="overflow: hidden;max-width:40px;">{% if room.description %} {{ room.description }} {% endif %}</td>
+              <td>{{ room.capacity }}</td>
+              <td>{% if room.floor == 0 %}  G  {% endif %}
+              {% if room.floor == 1 %}  L1  {% endif %}
+              {% if room.floor == 2 %}  1  {% endif %}
+              {% if room.floor == 3 %}  2  {% endif %}</td>
+              <td>{{ room.room_type }}</td>
+              </tr>
+              {% endfor %}
+          </table>
+          </div>
+          {% else %}
+            <p style="color:#312450">Information about rooms to be displayed here if found.</p>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <div id="section2" style="display:none" data-parent="section2-link">    
+
+        <h1 style="color:#312450">Search Results</h1> {% if query %} <h1>for "{{ query }}"</h1> {% endif %}
+        <h2 style="color:#312450">Events</h2>
+        <ul id="event-list">
+          {% if events %}
+          <div id="table">
+          <table id="customers">
+            <tr>
+              <th>Event name</th>
+              <th>Presenter</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Start time</th>
+              <th>End time</th>
+              <th>Event Type</th>
+              <th>Event Room Location</th>
+            </tr>  
+            {% for event in events %}
+              <tr>
+              <td>{{ event.name }}</td>
+              <td>{{ event.presenter }}</td>
+              <td style="overflow: hidden;max-width:40px;">{% if event.description %} {{ event.description }} {% endif %}</td>
+              <td>{{ event.start_date }}</td>
+              <td>{{ event.time }}</td>
+              <td>{{ event.end_time }}</td>
+              <td>{{ event.type_of_event }}</td>
+              <td>{{ event.room.title }}</td>
+              </tr>
+              {% endfor %}
+          </table>
+          </div>
+          {% else %}
+            <p style="color:#312450">Information about events to be displayed here if found.</p>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <div id="section3" style="display:none" data-parent="section3-link">    
+
+        <h1 style="color:#312450">Search Results</h1> {% if query %} <h1>for "{{ query }}"</h1> {% endif %}
+        <h2 style="color:#312450">Offices</h2>
+        <ul id="office-list">
+          {% if offices %}
+          <div id="table">
+          <table id="customers">
+            <tr>
+              <th>Office</th>
+              <th>Lecturer</th>
+            </tr>  
+            {% for office in offices %}
+              <tr>
+              <td>{{ office.room.title }}</td>
+              <td>{% if office.lecturer %} {{ office.lecturer }} {% endif %}</td>
+              </tr>
+              {% endfor %}
+          </table>
+          </div>
+          {% else %}
+            <p style="color:#312450">Information about events to be displayed here if found.</p>
+          {% endif %}
+        </ul>
+      </div>
+  </div>
+
+    <script>
+      function showInfo(section) {
+        // Get all the section elements
+        var sections = document.querySelectorAll('.content > *');
+        // Loop through all the section elements and hide them, except for the one we want to show
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].id === section || sections[i].getAttribute('data-parent') === section) {
+            sections[i].style.display = 'block';
+          } else {
+            sections[i].style.display = 'none';
+          }
+        }
+
+      }
+      // Show the first section by default
+      showInfo('section1');
+    </script>
+</div>
+
+<script src="{% static 'js/java.js' %}">
+</script>
+<script src="{% static 'js/timetable.js' %}">
+</script>
+
+</body>
+</html>

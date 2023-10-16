@@ -1,0 +1,148 @@
+{% load static %}
+
+<html>
+<head>
+    <title>Information Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+      /* Style for the menu */
+
+    .menu {
+      width: 100%;
+      height: 70%;
+      overflow: auto;
+    }
+    .menu ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu li {
+      border-bottom: 10px solid white;
+    }
+    .menu li a {
+      margin: 20px;
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: white;
+      font-size: 15pt;
+    }
+    .menu li a.active {
+      background-color: #ddd;
+    }
+
+    /* Style for the content */
+    .content {
+      width: 100%;
+      padding: 20px;
+      margin-top: 100px;
+    }
+    .content h2 {
+      margin-top: 0;
+    }
+    #section1{
+        color: #312450;
+    }
+    #section2{
+        color: #312450;
+    }
+    #section3{
+        color: #312450;
+    }
+      
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>  
+
+<body>
+
+<div id="search"> 
+    <svg width="200" height="200">
+        <image href="{% static 'images/mira logo.png' %}" height="200" width="200"/>
+    </svg>
+    
+    <div class="menu">
+        <ul>
+          <li><a href="#" class="active" onclick="showInfo('section1')">About</a></li>
+          <li><a href="#" onclick="showInfo('section2')">Access Guide</a></li>
+          <li><a href="#" onclick="showInfo('section3')">Booking system</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="div2"> 
+
+    <div id="div_menu">
+        <form method="POST">
+        <ul>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+            <li><a href="{% url 'ground_floor' %}">Navigation</a></li>
+            {% if is_logged_uom %} <li><a href="{% url 'search' %}">Search</a></li> {% endif %}
+        </ul>
+        </form>
+    </div>
+
+    <div class="content">
+        <h2 id="section1" style="display:none;font-size: 45;" data-parent="section1-link">About this website:</h2>
+        <p id="section1" style="color:black;display:none;font-size: 25;" data-parent="section1-link">
+        The purpose of this website is to provide an easy way to navigate the Kilburn Building.</p>
+        <p id="section1" style="color:black;display:none;font-size: 25;" data-parent="section1-link">
+        A task not so easily achieved withou using a map.</p>
+        <p id="section1" style="color:black;display:none;font-size: 25;" data-parent="section1-link">
+        The main goal of the application is to allow the users to navigate the rooms of Kilburn
+        and to search necessary information.
+        </p>
+
+        <p id="section1" style="display:none;font-size: 35;" data-parent="section1-link">Some information about the creator:</p>
+        <p id="section1" style="color:black;display:none;font-size: 25;" data-parent="section1-link">I am a third-year student at UoM. I hope this app helps me as much as it will help other people.</p>
+
+        <h2 id="section2" style="display:none;font-size: 45;" data-parent="section2-link">Access guide</h2>
+        <p id="section2" style="display:none;font-size: 25;" data-parent="section2-link">All information regarding accessability can be found on:</p>
+        <p id="section2" style="display:none; font-size: 20;" data-parent="section2-link">
+            <a href="https://www.accessable.co.uk/the-university-of-manchester/access-guides/kilburn-building#de792d07-ba8c-7047-bd5d-dfd95bb5120e">Visit Access Guide Page</a>
+        </p>
+        
+        <h2 id="section3" style="display:none;font-size: 45;" data-parent="section3-link">Booking system</h2>
+        <p id="section3" style="display:none;font-size: 25;" data-parent="section3-link">All information regarding booking of rooms can be found on:</p>
+        <p id="section3" style="display:none;font-size: 20;" data-parent="section3-link" >
+            <a href="https://resourcebooker.manchester.ac.uk/">Visit Booking System Page</a>
+        </p>
+    </div>
+
+      <script>
+        function showInfo(section) {
+          // Get all the section elements
+          var sections = document.querySelectorAll('.content > *');
+          // Loop through all the section elements and hide them, except for the one we want to show
+          for (var i = 0; i < sections.length; i++) {
+            if (sections[i].id === section || sections[i].getAttribute('data-parent') === section) {
+              sections[i].style.display = 'block';
+            } else {
+              sections[i].style.display = 'none';
+            }
+          }
+          // Set the active class on the menu link
+          var menuLinks = document.getElementsByTagName('a');
+          for (var i = 0; i < menuLinks.length; i++) {
+            menuLinks[i].classList.remove('active');
+          }
+          var activeLink = document.querySelector('a[href="#'+section+'"]');
+          activeLink.classList.add('active');
+        }
+        // Show the first section by default
+        showInfo('section1');
+      </script>
+
+</div>
+
+<script src="{% static 'js/java.js' %}">
+</script>
+<script src="{% static 'js/timetable.js' %}">
+</script>
+
+</body>
+</html>

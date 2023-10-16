@@ -1,0 +1,440 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: #ffffff;
+	flex: none;
+}
+
+label {
+	color: lightgray;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+input {
+	background: lightgray;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+button {
+	width: 50px;
+	height: 40px;
+	justify-content: center;
+	display: block;
+	color: #573b8a;
+	background: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #6d44b8;
+	color: #ffffff;
+}
+
+#div1 {
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 25%;
+	height: 100vh;
+	background: #312450;
+	font-size: 0.65em;
+}
+
+#div2 {
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0;
+	height: 100vh;
+	width: 75%;
+}
+
+#div3 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	height: 75px;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+#div3 input:nth-of-type(1) {
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px 20px 20px auto;
+	border-radius: 5px;
+}
+
+#div3 input:nth-of-type(2) {
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto 20px 20px;
+	border-radius: 5px;
+}
+
+#div_floors {
+	font-family: Arial, Helvetica, sans-serif;
+	list-style-type: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	border: 6px solid #312450;
+	border-radius: 5px;
+}
+
+#div_floors a{
+	text-decoration: none;
+}
+
+#instruction {
+	color: #312450;
+	font-size: 1.9em;
+	justify-content: center;
+	width: 400px; /* set the desired width here */
+	display: inline-block;
+	margin: 0px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+path {
+	fill: #4B0082;
+	opacity: 12%;
+}
+
+path:hover {
+	fill: #4B0082;
+	opacity: 40%;
+}
+
+/* The Modal (background) */
+.modal {
+	/* display: none; Hidden by default */
+	visibility: hidden;
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: 1% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 815.35px;
+	/* Could be more or less, depending on screen size */
+	transform: translate(-10%, 5%);
+}
+
+.modal-content2 {
+	background-color: #fefefe;
+	margin: 1% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 255.35px;
+	/* Could be more or less, depending on screen size */
+	visibility: hidden;
+	position: absolute;
+	z-index: 500;
+	top: 10%;
+	left: 80%;
+	transform: translate(-30%, -10%);
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* The Close Button */
+.close2 {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Style the table */
+.timetable {
+	border-collapse: collapse;
+	width: 100%;
+	position: relative;
+}
+
+.timetable th,
+.timetable td {
+	text-align: center;
+	padding: 8px;
+	border: 1px solid #ddd;
+	width: 100px;
+}
+
+.timetable th {
+	background-color: whitesmoke;
+	color: blueviolet;
+}
+
+.event {
+	background-color: blueviolet;
+	text-align: center;
+	opacity: 80%;
+	color: white;
+}
+
+.navigation_button {
+	width: 100px;
+	height: 40px;
+	justify-content: center;
+	color: white;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	transition: 0s ease-in-out;
+	float: right;
+}
+
+.nav {
+	color: #312450;
+	font-size: 1.3em;
+	justify-content: center;
+	margin: 15px;
+	font-weight: bold;
+	transition: 0s ease-in-out;
+}
+
+.nav_find {
+	width: 100px;
+	height: 40px;
+	justify-content: center;
+	color: white;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	transition: 0s ease-in-out;
+	float: right;
+}
+
+.table_header{
+	float:left;
+	color: #312450;
+	font-weight: bold;
+	font-size: 1.8em;
+	margin: 10px;
+	padding: 0px;
+}
+
+div#div_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
+	height: 40px;
+}
+  
+div#div_menu ul li {
+	float: right;
+}
+
+div#div_menu ul li a {
+	display: block;
+	color: #312450;
+	text-align: center;
+	padding: 7px 16px;
+	text-decoration: none;
+	background-color: lightgray;
+	font-weight: bold;
+	height: 20px;
+
+}
+
+div#div_menu ul li a:hover:not(.active) {
+	background-color: #573b8a;
+}
+  
+.results {
+    display: inline-block;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+	display: inline-block;
+	justify-content: center;
+	text-align: center;
+	width: 25%;
+	height: 100vh;
+	background: #312450;
+	font-size: 0.65em;
+}
+
+#search-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-right: 1px;
+}
+
+.form-group button[type="submit"] {
+    background-color: #312450;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-results {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: pink;
+    border: 1px solid black;
+}
+
+#search-results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#search-results li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#search-results li:hover {
+    background-color: pink;
+}
+
+.toilet_buttons {
+	padding: 0px;
+	position: relative;
+	margin: 0px;
+}
+
+.toilet_m {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background-color: #312450;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+	font-size: 10pt;
+	background-image: url("/static/images/men.png");
+	background-size:100% 100%;
+}
+
+.toilet_w {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background-color: #312450;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+	font-size: 10pt;
+	background-image: url("/static/images/women.png");
+	background-size:100% 100%;
+}
+
+.toilet_d {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background-color: #312450 !important;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+	font-size: 10pt;
+	background-image: url("/static/images/disabled.jpg");
+	background-size:100% 100%;
+}
